@@ -1,0 +1,4047 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Traditionelles Köhlerhandwerk in Westthüringen – Das immaterielle Kulturerbe am Beispiel des Kittelsthaler Meilers. Interaktive Erkundung von Meileraufbau, Geschichte und Tradition.">
+  <meta name="author" content="Seminarfachgruppe Köhlerhandwerk">
+  <title>Das Köhlerhandwerk – Der Kittelsthaler Meiler | Immaterielles Kulturerbe</title>
+
+  <!-- ==========================================================================
+       BILDERLISTE (HINWEISE FÜR DEN VEREIN & DIE BEARBEITUNG)
+       ==========================================================================
+       Alle benötigten Fotos liegen im Unterordner "images/" neben dieser index.html.
+       Solange kein echtes Foto vorhanden ist, zeigt die Website automatisch einen
+       modern gestalteten Platzhalter-Kasten mit Kamera-Symbol und Funktionsbeschreibung an.
+       Sobald eine Datei mit dem passenden Namen im Ordner "images/" abgelegt wird,
+       erscheint automatisch das echte Foto – ganz ohne Änderung am Quellcode!
+
+       Benötigte Bilddateien:
+       1.  images/hero-meiler.jpg               -> Foto: Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch
+       2.  images/aufbau-01-grundriss.jpg       -> Foto: Der mit pinker Sprühfarbe markierte Grundriss auf der Kohlstelle
+       3.  images/aufbau-02-quantelschacht.jpg   -> Foto: Der Quantelschacht in der Mitte des Grundrisses
+       4.  images/aufbau-03-lueftungsschacht.jpg -> Foto: Grundplatte mit den vier Lüftungsschächten
+       5.  images/aufbau-04-erste-schicht.jpg   -> Foto: Köhler beim dichten Aufschichten der ersten Schicht (ca. 42° Neigung)
+       6.  images/aufbau-05-form.jpg            -> Foto: Fast fertig aufgeschichteter Meiler in Kegelstumpfform
+       7.  images/aufbau-06-abdeckung.jpg       -> Foto: Meiler mit dünner Heuschicht und dichter Löscheschicht
+       8.  images/aufbau-07-anzuenden.jpg       -> Foto: Der Köhler auf dem Meiler beim Befüllen des Quantelschachtes mit Glut
+       9.  images/aufbau-08-beobachten.jpg      -> Foto: Pfeifen (Luftlöcher) und Rauchkontrolle rund um den Meiler
+       10. images/aufbau-09-ernte.jpg           -> Foto: Köhler bei der Kohleernte mit Atemschutz und Löschwasser
+       11. images/unterricht-im-freien.jpg      -> Foto: Schulklasse beim Lernen und Bau eines Mini-Meilers im Freien
+       12. images/verein-tradition.jpg          -> Foto: Die Köhlergemeinschaft des Kittelsthaler Meiler e. V. am Meilerplatz
+
+       Tipp: Hänge "#bilder" an die Webadresse an, um den Entwickler-Bildstatus aufzurufen!
+       ========================================================================== -->
+
+  <style>
+    /* ==========================================================================
+       1. CSS-DESIGN-SYSTEM (DURCHGEHEND DUNKEL, ELEGANT & MODERN)
+       ========================================================================== */
+    :root {
+      /* Einheitliche Dark-Palette */
+      --color-bg-base: #0e0c0b;
+      /* Tiefes Kohleschwarz */
+      --color-bg-surface: #171311;
+      /* Grundfläche für Sektionen */
+      --color-bg-card: #1f1a17;
+      /* Karten-Hintergrund */
+      --color-bg-card-hover: #26201c;
+      /* Angehobene Karte bei Hover */
+      --color-bg-card-elevated: #2b231f;
+
+      /* Akzente: Glut, Kohle & Wald */
+      --color-ember: #e8571f;
+      /* Strahlende Glut-Akzentfarbe */
+      --color-ember-glow: #ff753a;
+      /* Helles Glühen */
+      --color-ember-muted: rgba(232, 87, 31, 0.16);
+      --color-amber: #f4a261;
+      /* Warmes Feuergold */
+      --color-green-forest: #2b4c37;
+      /* Tiefes Nadelwaldgrün */
+      --color-green-light: #52a16d;
+      /* Subtiler Wald-Akzent */
+
+      /* Typografiefarben */
+      --color-text-main: #f6f2ec;
+      /* Haupttext (Hellgrau-Creme) */
+      --color-text-sub: #cfc4b8;
+      /* Fließtext */
+      --color-text-muted: #8e8276;
+      /* Sekundäre Angaben, Einheiten */
+
+      /* Trennlinien & Rahmen */
+      --color-border-subtle: rgba(255, 255, 255, 0.08);
+      --color-border-active: rgba(232, 87, 31, 0.45);
+
+      /* Typografie (100% offline, robuste System-Schriftarten) */
+      --font-serif: Georgia, "Times New Roman", "Baskerville", serif;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+      /* Übergänge & Schatten */
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 30px rgba(232, 87, 31, 0.25);
+
+      /* Radien */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      /* Layout */
+      --max-width: 1180px;
+      --nav-height: 72px;
+    }
+
+    /* Ausstellungsmodus für Großbildschirme (#ausstellung) */
+    body.ausstellung-mode {
+      font-size: 1.25rem;
+    }
+
+    body.ausstellung-mode .btn {
+      padding: 1.15rem 2.4rem;
+      font-size: 1.2rem;
+    }
+
+    body.ausstellung-mode .nav-link {
+      font-size: 1.15rem;
+    }
+
+    /* Barrierefreiheit: Animationen auf Wunsch drosseln */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ==========================================================================
+       2. RESET & BASISELEMENTE
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-bg-base);
+      color: var(--color-text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-width: 320px;
+      background-color: var(--color-bg-base);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button,
+    a {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-ember);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ==========================================================================
+       3. LAYOUT & TYPOGRAFIE
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+      position: relative;
+      background-color: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .section-base {
+      background-color: var(--color-bg-base);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto clamp(2.5rem, 5vw, 4rem) auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.1rem;
+      background: var(--color-ember-muted);
+      color: var(--color-ember-glow);
+      border: 1px solid rgba(232, 87, 31, 0.28);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      line-height: 1.65;
+      color: var(--color-text-sub);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.85rem;
+      font-size: 1.02rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition-fast);
+      min-height: 48px;
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--color-ember);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(232, 87, 31, 0.38);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-ember-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(232, 87, 31, 0.55);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--color-text-main);
+      border: 1px solid var(--color-border-subtle);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .todo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(232, 87, 31, 0.14);
+      color: #ffa177;
+      border: 1px dashed rgba(232, 87, 31, 0.5);
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin: 0.4rem 0;
+    }
+
+    /* ==========================================================================
+       4. BILDER & PLATZHALTER-SYSTEM
+       ========================================================================== */
+    .image-placeholder-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #171311;
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: var(--shadow-md);
+    }
+
+    .ratio-4-3 {
+      aspect-ratio: 4 / 3;
+    }
+
+    .ratio-16-9 {
+      aspect-ratio: 16 / 9;
+    }
+
+    .image-placeholder-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .image-placeholder-wrapper:hover img {
+      transform: scale(1.02);
+    }
+
+    .image-placeholder-wrapper.has-real-image .placeholder-content {
+      display: none !important;
+    }
+
+    .placeholder-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.6rem;
+      background: linear-gradient(145deg, #181412 0%, #201a17 100%);
+      color: var(--color-text-sub);
+      z-index: 2;
+    }
+
+    .placeholder-icon {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.8rem;
+      stroke: var(--color-ember);
+      stroke-width: 1.8;
+      fill: none;
+      opacity: 0.85;
+    }
+
+    .placeholder-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      background: var(--color-ember-muted);
+      color: var(--color-ember-glow);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.6rem;
+    }
+
+    .placeholder-text {
+      font-size: 0.92rem;
+      font-weight: 500;
+      max-width: 380px;
+      line-height: 1.45;
+      margin-bottom: 0.6rem;
+      color: var(--color-text-main);
+    }
+
+    .placeholder-filename {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.76rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-text-muted);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    /* ==========================================================================
+       5. HEADER & SCROLL-LEISTE
+       ========================================================================== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff753a, var(--color-ember));
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(14, 12, 11, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      z-index: 900;
+      transition: background-color var(--transition-normal);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      color: var(--color-text-main);
+      font-weight: 700;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      font-family: var(--font-sans);
+      color: var(--color-amber);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--color-text-sub);
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-link.active {
+      color: #ffffff;
+      background: var(--color-ember-muted);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: var(--color-ember);
+      border-radius: var(--radius-full);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--color-text-main);
+      border-radius: var(--radius-sm);
+    }
+
+    .menu-toggle svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-menu-wrapper {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: #15110f;
+        border-bottom: 1px solid var(--color-border-subtle);
+        padding: 1.5rem;
+        transform: translateY(-120%);
+        transition: transform var(--transition-normal);
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu-wrapper.is-open {
+        transform: translateY(0);
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+      }
+
+      .nav-link {
+        padding: 0.8rem 1.1rem;
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ==========================================================================
+       6. HERO-BEREICH
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: calc(var(--nav-height) + 2rem);
+      padding-bottom: 5rem;
+      background-color: var(--color-bg-base);
+      overflow: hidden;
+      border-top: none;
+    }
+
+    #ember-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-bg-wrapper {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.32;
+      filter: saturate(0.8);
+    }
+
+    .hero-bg-wrapper .image-placeholder-wrapper {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      border: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 35%, rgba(14, 12, 11, 0.35) 0%, rgba(14, 12, 11, 0.95) 100%),
+        linear-gradient(to bottom, rgba(14, 12, 11, 0.2) 0%, rgba(14, 12, 11, 1) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(43, 76, 55, 0.45);
+      border: 1px solid rgba(82, 161, 109, 0.35);
+      color: #9cd4ae;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.38rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+      line-height: 1.08;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+      font-weight: 400;
+      color: var(--color-amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-intro {
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+      color: var(--color-text-sub);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .hero-greeting-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.1rem;
+      background: var(--color-ember-muted);
+      border-left: 3px solid var(--color-ember);
+      padding: 0.9rem 1.4rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 2.2rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(232, 87, 31, 0.22);
+      border-left-width: 3px;
+    }
+
+    .greeting-text {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--color-ember-glow);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .greeting-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-sub);
+      line-height: 1.4;
+      max-width: 440px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       7. KENNZAHLEN (3x2 RASTER AUF DESKTOP - SYMMETRISCH & AUSGEWOGEN)
+       ========================================================================== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.8rem;
+    }
+
+    @media (max-width: 920px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-border-active);
+      background: var(--color-bg-card-hover);
+    }
+
+    .stat-number-wrapper {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 700;
+      color: var(--color-ember-glow);
+      line-height: 1;
+    }
+
+    .stat-unit {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-amber);
+    }
+
+    .stat-label {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-sub);
+      line-height: 1.5;
+    }
+
+    /* Zentrierter, ruhiger Kasten ohne Kreis-Icon */
+    .explanation-box {
+      background: linear-gradient(135deg, rgba(27, 22, 19, 0.85) 0%, rgba(38, 29, 24, 0.65) 100%);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 2.8rem);
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .explanation-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .explanation-text {
+      color: var(--color-text-sub);
+      font-size: 1.05rem;
+      line-height: 1.68;
+    }
+
+    /* ==========================================================================
+       8. HERZSTÜCK: INTERAKTIVER MEILERAUFBAU
+       ========================================================================== */
+    .meiler-tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.8rem;
+    }
+
+    .meiler-tab-btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid var(--color-border-subtle);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--color-text-sub);
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .meiler-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.09);
+      color: #ffffff;
+    }
+
+    .meiler-tab-btn.active {
+      background: var(--color-ember);
+      border-color: var(--color-ember);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(232, 87, 31, 0.4);
+    }
+
+    .tab-icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .meiler-tab-panel {
+      display: none;
+    }
+
+    .meiler-tab-panel.active {
+      display: block;
+      animation: tabFadeIn 0.35s ease;
+    }
+
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* TEIL A: STEPPER (OHNE ABSCHNEIDEN BEI 1 & 9) */
+    .stepper-container {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3.5vw, 2.5rem);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stepper-progress-wrapper {
+      position: relative;
+      margin-bottom: 2.8rem;
+      padding: 0.8rem 0;
+      overflow: visible;
+    }
+
+    .stepper-pills-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      padding: 6px 14px;
+      /* Sicherer Innenabstand: Pill 1 und 9 werden bei scale(1.15) nicht mehr abgeschnitten! */
+      overflow: visible;
+    }
+
+    .stepper-line-track {
+      position: absolute;
+      top: 50%;
+      left: 32px;
+      right: 32px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .stepper-line-fill {
+      position: absolute;
+      top: 50%;
+      left: 32px;
+      height: 2px;
+      background: var(--color-ember);
+      transform: translateY(-50%);
+      z-index: 2;
+      transition: width var(--transition-normal);
+      box-shadow: 0 0 10px rgba(232, 87, 31, 0.8);
+    }
+
+    .step-pill {
+      position: relative;
+      z-index: 4;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      background: #171311;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-text-sub);
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .step-pill:hover {
+      border-color: var(--color-amber);
+      color: #ffffff;
+      transform: scale(1.08);
+    }
+
+    .step-pill.completed {
+      background: #2a1f19;
+      border-color: var(--color-ember);
+      color: var(--color-amber);
+    }
+
+    .step-pill.active {
+      background: var(--color-ember);
+      border-color: #ffffff;
+      color: #ffffff;
+      transform: scale(1.15);
+      box-shadow: 0 0 16px rgba(232, 87, 31, 0.65);
+    }
+
+    .stepper-body {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: clamp(1.5rem, 3.5vw, 3rem);
+      align-items: center;
+      margin-bottom: 2.2rem;
+      min-height: 420px;
+    }
+
+    @media (max-width: 860px) {
+      .stepper-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-counter-tag {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: var(--color-amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 1.1rem;
+    }
+
+    .step-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text-sub);
+      margin-bottom: 1.4rem;
+    }
+
+    .step-hint-box {
+      background: rgba(232, 87, 31, 0.08);
+      border-left: 3px solid var(--color-ember);
+      padding: 0.85rem 1.2rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+      color: #ede5dc;
+      border-top: 1px solid rgba(232, 87, 31, 0.15);
+      border-right: 1px solid rgba(232, 87, 31, 0.15);
+      border-bottom: 1px solid rgba(232, 87, 31, 0.15);
+    }
+
+    .stepper-nav-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--color-border-subtle);
+      padding-top: 1.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* TEIL B: REALISTISCHER SVG-QUERSCHNITT */
+    .cross-section-container {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3.5vw, 2.5rem);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cross-section-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .cross-section-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .svg-wrapper {
+      position: relative;
+      width: 100%;
+      background: radial-gradient(circle at 50% 65%, #241c16 0%, #110e0c 100%);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.7);
+    }
+
+    .cross-section-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hotspot-Design & Text-Kontrast-Korrektur */
+    .hotspot {
+      cursor: pointer;
+    }
+
+    .hotspot-pulse {
+      animation: pulseAnimation 2s infinite ease-out;
+      transform-origin: center;
+    }
+
+    @keyframes pulseAnimation {
+      0% {
+        r: 15;
+        opacity: 0.9;
+      }
+
+      70% {
+        r: 25;
+        opacity: 0;
+      }
+
+      100% {
+        r: 27;
+        opacity: 0;
+      }
+    }
+
+    .hotspot text {
+      fill: #ffffff;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      pointer-events: none;
+      transition: fill 0.2s ease;
+    }
+
+    /* Sobald gehovert oder aktiv: Zahl wird tiefschwarz auf weißem Kern -> immer perfekt lesbar! */
+    .hotspot:hover text,
+    .hotspot.active text {
+      fill: #0e0c0b;
+    }
+
+    .hotspot:hover .hotspot-core {
+      fill: #ffffff;
+      filter: drop-shadow(0 0 10px var(--color-ember));
+    }
+
+    .hotspot.active .hotspot-core {
+      fill: #ffffff;
+      stroke: var(--color-ember);
+      stroke-width: 3.5;
+      filter: drop-shadow(0 0 12px rgba(232, 87, 31, 0.9));
+    }
+
+    .hotspot-info-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+    }
+
+    .hotspot-info-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--color-amber);
+      margin-bottom: 0.4rem;
+    }
+
+    .hotspot-info-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .hotspot-info-desc {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--color-text-sub);
+      margin-bottom: 1.5rem;
+    }
+
+    .hotspot-selection-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .hotspot-btn-pill {
+      font-size: 0.85rem;
+      padding: 0.38rem 0.85rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--color-border-subtle);
+      color: var(--color-text-sub);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .hotspot-btn-pill:hover,
+    .hotspot-btn-pill.active {
+      background: var(--color-ember);
+      color: #ffffff;
+      border-color: var(--color-ember);
+    }
+
+    /* TEIL C: RAUCHFARBEN (MIT KONTRAST FÜR SCHWARZEN RAUCH) */
+    .smoke-detective-container {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3.5vw, 2.5rem);
+      box-shadow: var(--shadow-md);
+    }
+
+    .smoke-detective-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .smoke-detective-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Hellerer Dämmerungshintergrund: Dadurch hebt sich auch schwarzer Rauch deutlich ab! */
+    .smoke-simulation-box {
+      background: linear-gradient(to top, #241d18 0%, #302620 40%, #3d3329 70%, #4a3e33 100%);
+      border-radius: var(--radius-md);
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Sanfte Wald-Silhouette im Hintergrund */
+    .smoke-simulation-box::before {
+      content: "";
+      position: absolute;
+      bottom: 45px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: radial-gradient(ellipse at 50% 100%, #171310 0%, transparent 80%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .mini-meiler-silhouette {
+      width: 140px;
+      height: 55px;
+      background: #1c1511;
+      border-radius: 60px 60px 0 0;
+      border: 2px solid #4a382e;
+      position: relative;
+      z-index: 5;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85);
+    }
+
+    .mini-meiler-silhouette::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: -20px;
+      right: -20px;
+      height: 6px;
+      background: #110d0a;
+      border-radius: 4px;
+    }
+
+    .smoke-plume-wrapper {
+      position: absolute;
+      bottom: 58px;
+      width: 130px;
+      height: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 4;
+    }
+
+    .smoke-puff {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      filter: blur(10px);
+      animation: riseSmoke 4.2s infinite ease-out;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .smoke-puff:nth-child(1) {
+      width: 34px;
+      height: 34px;
+      bottom: 0;
+      animation-delay: 0s;
+    }
+
+    .smoke-puff:nth-child(2) {
+      width: 52px;
+      height: 52px;
+      bottom: 25px;
+      animation-delay: 0.9s;
+    }
+
+    .smoke-puff:nth-child(3) {
+      width: 72px;
+      height: 72px;
+      bottom: 58px;
+      animation-delay: 1.9s;
+    }
+
+    .smoke-puff:nth-child(4) {
+      width: 98px;
+      height: 98px;
+      bottom: 98px;
+      animation-delay: 2.9s;
+    }
+
+    @keyframes riseSmoke {
+      0% {
+        transform: translateY(0) scale(0.6) rotate(0deg);
+        opacity: 0.85;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateY(-220px) scale(2.3) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    /* Rauch-Farbvarianten */
+    .smoke-plume-wrapper.smoke-blue .smoke-puff {
+      background-color: rgba(90, 158, 230, 0.75);
+      box-shadow: 0 0 15px rgba(90, 158, 230, 0.4);
+    }
+
+    .smoke-plume-wrapper.smoke-white .smoke-puff {
+      background-color: rgba(245, 245, 250, 0.8);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    .smoke-plume-wrapper.smoke-yellow .smoke-puff {
+      background-color: rgba(210, 160, 75, 0.75);
+      box-shadow: 0 0 15px rgba(210, 160, 75, 0.35);
+    }
+
+    /* Schwarzer Rauch: Durch tiefdunkles Kohlegrau und feine Randkontur vor dem Dämmerungshimmel sofort erkennbar! */
+    .smoke-plume-wrapper.smoke-black .smoke-puff {
+      background-color: rgba(18, 14, 12, 0.95);
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(80, 70, 60, 0.3);
+    }
+
+    .smoke-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 520px) {
+      .smoke-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .smoke-card-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .smoke-card-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .smoke-card-btn.active {
+      border-color: var(--color-ember);
+      background: var(--color-ember-muted);
+      box-shadow: 0 4px 15px rgba(232, 87, 31, 0.25);
+    }
+
+    .smoke-color-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .dot-blue {
+      background: #5a9ee2;
+    }
+
+    .dot-white {
+      background: #ffffff;
+    }
+
+    .dot-yellow {
+      background: #b8934b;
+    }
+
+    .dot-black {
+      background: #14110f;
+    }
+
+    .smoke-card-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: #ffffff;
+    }
+
+    .smoke-explanation-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      border: 1px solid var(--color-border-subtle);
+      border-left: 3px solid var(--color-ember);
+    }
+
+    .smoke-exp-title {
+      font-family: var(--font-serif);
+      font-size: 1.22rem;
+      color: var(--color-amber);
+      margin-bottom: 0.4rem;
+    }
+
+    .smoke-exp-text {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--color-text-sub);
+    }
+
+    /* ==========================================================================
+       9. KÖHLER-LEXIKON (DAUERHAFT AUSGEKLAPPT IM MODERNEN RASTER)
+       ========================================================================== */
+    .begriffe-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 1060px) {
+      .begriffe-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .begriffe-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .begriff-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.45rem 1.45rem;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .begriff-card:hover {
+      border-color: rgba(232, 87, 31, 0.4);
+      background: var(--color-bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .begriff-title {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      line-height: 1.3;
+    }
+
+    .begriff-title::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: var(--radius-full);
+      background: var(--color-ember);
+      flex-shrink: 0;
+    }
+
+    .begriff-text {
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: var(--color-text-sub);
+    }
+
+    /* ==========================================================================
+       10. ZEITSTRAHL (DIE ZEITLEISTE)
+       ========================================================================== */
+    .timeline-container {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 0;
+    }
+
+    .timeline-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(to bottom, #52a16d 0%, var(--color-ember) 50%, #e8571f 100%);
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(232, 87, 31, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-container::before {
+        left: 24px;
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 50%;
+      padding: 0 2.5rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 58px;
+        padding-right: 0;
+        text-align: left !important;
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: var(--radius-full);
+      background: var(--color-ember);
+      border: 3px solid var(--color-bg-base);
+      box-shadow: 0 0 12px rgba(232, 87, 31, 0.8);
+      z-index: 5;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -8px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -8px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item .timeline-dot {
+        left: 17px !important;
+        right: auto !important;
+      }
+    }
+
+    .timeline-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.7rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-border-active);
+      background: var(--color-bg-card-hover);
+    }
+
+    .timeline-year {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-amber);
+      background: var(--color-ember-muted);
+      border: 1px solid rgba(232, 87, 31, 0.25);
+      padding: 0.22rem 0.65rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+      color: var(--color-text-sub);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       11. VEREIN & TRADITION
+       ========================================================================== */
+    .verein-milestones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .verein-milestone-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      text-align: center;
+      transition: all var(--transition-fast);
+    }
+
+    .verein-milestone-card:hover {
+      border-color: rgba(82, 161, 109, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .milestone-year {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #52a16d;
+      margin-bottom: 0.35rem;
+    }
+
+    .milestone-text {
+      font-size: 0.9rem;
+      color: var(--color-text-sub);
+      line-height: 1.45;
+    }
+
+    .verein-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .verein-features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .concept-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    .concept-tag {
+      color: #52a16d;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .concept-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .concept-text {
+      color: var(--color-text-sub);
+      font-size: 1.02rem;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .person-card {
+      background: #171311;
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.3rem 1.5rem;
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .person-role {
+      font-size: 0.85rem;
+      color: var(--color-amber);
+      font-weight: 600;
+    }
+
+    .person-name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .fest-invite-card {
+      background: linear-gradient(135deg, #241913 0%, #15110f 100%);
+      border-radius: var(--radius-lg);
+      padding: clamp(2.2rem, 4.5vw, 3.2rem);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--color-border-active);
+    }
+
+    .fest-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .fest-cycle {
+      font-size: 1.25rem;
+      color: var(--color-amber);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .fest-desc {
+      max-width: 650px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--color-text-sub);
+    }
+
+    /* ==========================================================================
+       12. PROJEKT & FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #090807;
+      color: var(--color-text-sub);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 4.5rem 0 2.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-link {
+      color: var(--color-amber);
+      transition: color var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-border-subtle);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: var(--color-ember);
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      z-index: 850;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all var(--transition-fast);
+    }
+
+    .scroll-top-btn.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-top-btn:hover {
+      background: var(--color-ember-glow);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 22px rgba(232, 87, 31, 0.6);
+    }
+
+    .scroll-top-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    .dev-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: 2000;
+      padding: 1.5rem;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .dev-modal.is-open {
+      display: flex;
+    }
+
+    .dev-modal-content {
+      background: #191412;
+      border: 1px solid var(--color-border-active);
+      border-radius: var(--radius-lg);
+      max-width: 800px;
+      width: 100%;
+      padding: 2.2rem;
+      color: var(--color-text-main);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .dev-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .dev-image-list {
+      margin: 1.2rem 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+
+    .dev-image-item {
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      gap: 1rem;
+    }
+
+    .dev-badge-status {
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dev-badge-status.missing {
+      background: rgba(232, 87, 31, 0.15);
+      color: #ff9d6c;
+      border: 1px solid rgba(232, 87, 31, 0.4);
+    }
+
+    .dev-badge-status.loaded {
+      background: rgba(82, 161, 109, 0.2);
+      color: #52a16d;
+      border: 1px solid #52a16d;
+    }
+
+    .ausstellung-banner {
+      display: none;
+      background: var(--color-ember);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1100;
+    }
+
+    body.ausstellung-mode .ausstellung-banner {
+      display: block;
+    }
+
+    body.ausstellung-mode .site-header {
+      top: 28px;
+    }
+
+    body.ausstellung-mode #scroll-progress {
+      top: 28px;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Ausstellungsmodus-Banner (nur sichtbar bei #ausstellung) -->
+  <div class="ausstellung-banner" id="ausstellung-banner">
+    Museums- & Ausstellungsmodus | Automatische Rückkehr zum Start nach 90 Sekunden Inaktivität
+  </div>
+
+  <!-- Oberer Lesefortschrittsbalken -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION & HEADER
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-link" aria-label="Zurück zum Start">
+        <div class="brand-text">
+          <span class="brand-title">Kittelsthaler Meiler</span>
+          <span class="brand-sub">Köhlerhandwerk Thüringen</span>
+        </div>
+      </a>
+
+      <!-- Burger Menü Button für Smartphones -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false"
+        aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Navigationslinks -->
+      <div class="nav-menu-wrapper" id="nav-menu">
+        <nav class="main-nav" aria-label="Hauptnavigation">
+          <ul class="nav-list">
+            <li><a href="#ueberblick" class="nav-link">Auf einen Blick</a></li>
+            <li><a href="#meileraufbau" class="nav-link">Meileraufbau</a></li>
+            <li><a href="#begriffe" class="nav-link">Lexikon</a></li>
+            <li><a href="#geschichte" class="nav-link">Geschichte</a></li>
+            <li><a href="#verein" class="nav-link">Verein</a></li>
+            <li><a href="#projekt" class="nav-link">Projekt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         5.1 HERO-BEREICH (STARTSEITE)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <canvas id="ember-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-bg-wrapper">
+        <div class="image-placeholder-wrapper ratio-16-9" data-img="hero">
+          <img src="images/hero-meiler.jpg" alt="Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch"
+            loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
+            onerror="this.style.display='none';">
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <span class="placeholder-tag">Titelbild Meilerplatz</span>
+            <p class="placeholder-text">Foto: Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch</p>
+            <span class="placeholder-filename">images/hero-meiler.jpg</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span>Immaterielles Kulturerbe seit 2014</span>
+        </div>
+        <h1 class="hero-title">Das Köhlerhandwerk</h1>
+        <p class="hero-subtitle">Der Kittelsthaler Meiler</p>
+        <p class="hero-intro">
+          Das traditionelle Köhlerhandwerk in Westthüringen gehört seit 2014 zum immateriellen Kulturerbe in
+          Deutschland.
+          Hier erfährst du Schritt für Schritt, wie auf der Kohlstelle ein traditioneller Meiler entsteht und wie aus
+          Buchenholz reine Holzkohle wird.
+        </p>
+
+        <div class="hero-greeting-box">
+          <span class="greeting-text">„Gut Brand!“</span>
+          <p class="greeting-desc">
+            Die traditionelle Köhlergrußformel: Sie wird beim feierlichen Anzünden des Meilers als Segenswunsch unter
+            Köhlern gerufen und dient zugleich als herzliche Begrüßung am Meilerplatz.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#meileraufbau" class="btn btn-primary">
+            Meileraufbau entdecken
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#ueberblick" class="btn btn-secondary">
+            Zahlen & Fakten
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.2 DER MEILER AUF EINEN BLICK
+         ========================================================================== -->
+    <section class="section section-base" id="ueberblick">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Zahlen & Wissen</span>
+          <h2 class="section-title">Der Meiler auf einen Blick</h2>
+          <p class="section-subtitle">
+            Jahrhundertealtes Erfahrungswissen, Naturgesetze und reine Handarbeit: Die zentralen Kennzahlen des
+            Kittelsthaler Meilers.
+          </p>
+        </div>
+
+        <!-- 3x2 Raster: Alle 6 Karten perfekt symmetrisch und ausgewogen angeordnet -->
+        <div class="stats-grid">
+          <!-- Karte 1: Holzart -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" style="font-size: clamp(2rem, 3.2vw, 2.7rem);">Buche</span>
+            </div>
+            <div class="stat-label">Traditionelle Holzart</div>
+            <p class="stat-desc">
+              Buche und Eiche sind seit Jahrhunderten die wichtigsten Hölzer – dank hoher Dichte, Festigkeit und hohem
+              Kohlenstoffgehalt.
+            </p>
+          </div>
+
+          <!-- Karte 2: Durchmesser -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-number count-up" data-target="6">0</span>
+              <span class="stat-unit">m</span>
+            </div>
+            <div class="stat-label">Durchmesser</div>
+            <p class="stat-desc">
+              Der kreisrunde Grundriss des Kittelsthaler Meilers wird vor dem Aufbau präzise mit Farbe auf der
+              Kohlstelle abgesteckt.
+            </p>
+          </div>
+
+          <!-- Karte 3: Turnus -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-unit">Alle</span>
+              <span class="stat-number count-up" data-target="2">0</span>
+              <span class="stat-unit">Jahre</span>
+            </div>
+            <div class="stat-label">Meilerfest</div>
+            <p class="stat-desc">
+              Alle zwei Jahre in der Himmelfahrtswoche erwacht das Köhlerbrauchtum in Kittelsthal für eine Woche zum
+              Leben.
+            </p>
+          </div>
+
+          <!-- Karte 4: Dauer Verkohlung -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" style="font-size: clamp(1.8rem, 3vw, 2.4rem);">Tag & Nacht</span>
+            </div>
+            <div class="stat-label">Rund-um-die-Uhr-Wache</div>
+            <p class="stat-desc">
+              Mehrere Tage und Nächte dauert der Verkohlungsvorgang. Der Meiler wird dabei ohne Unterbrechung überwacht.
+            </p>
+          </div>
+
+          <!-- Karte 5: Schrumpfung -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-unit">ca.</span>
+              <span class="stat-number">1/3</span>
+            </div>
+            <div class="stat-label">der Anfangsgröße</div>
+            <p class="stat-desc">
+              So stark schrumpft der Meiler im Laufe der Woche zusammen, während Wasser und Holzgase entweichen.
+            </p>
+          </div>
+
+          <!-- Karte 6: Kapazität -->
+          <div class="stat-card reveal-on-scroll">
+            <div class="stat-number-wrapper">
+              <span class="stat-unit">bis zu</span>
+              <span class="stat-number count-up" data-target="90">0</span>
+              <span class="stat-unit">Fm</span>
+            </div>
+            <div class="stat-label">Festmeter Holz</div>
+            <p class="stat-desc">
+              Kann ein traditioneller Meiler je nach Baugröße fassen – aufgeschichtet in dichtester Handarbeit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Zentrierte, ruhige Erklärung ohne Icon-Kreis -->
+        <div class="explanation-box reveal-on-scroll">
+          <h3 class="explanation-title">Einfach erklärt: Was genau ist eigentlich ein Meiler?</h3>
+          <p class="explanation-text">
+            Ein Meiler ist ein <strong>luftdicht abgedeckter Holzstapel</strong>. Das Geheimnis des Köhlers: Das Holz
+            verbrennt darin <em>nicht</em> wie in einem Lagerfeuer, sondern wird unter <strong>Luftmangel sehr stark
+              erhitzt</strong>. Dabei dampfen Wasser und Holzgase ab, und das feste Holz verwandelt sich langsam in
+            echte, tiefschwarze Holzkohle. Fachleute nennen diesen Prozess <strong>Verkohlung</strong> oder
+            <strong>Verschwelung</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.3 INTERAKTIVER MEILERAUFBAU (HERZSTÜCK)
+         ========================================================================== -->
+    <section class="section" id="meileraufbau">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Das Herzstück des Handwerks</span>
+          <h2 class="section-title">Der interaktive Meileraufbau</h2>
+          <p class="section-subtitle">
+            57 % unserer Besucher interessieren sich ganz besonders für den Aufbau. Erkunde hier die 9 Arbeitsschritte,
+            den inneren Aufbau und die Geheimnisse des Meilerfeuers.
+          </p>
+        </div>
+
+        <!-- Tab-Umschalter -->
+        <div class="meiler-tab-nav" role="tablist" aria-label="Meileraufbau Ansichten">
+          <button class="meiler-tab-btn active" role="tab" id="tab-btn-stepper" aria-selected="true"
+            aria-controls="panel-stepper" data-target="panel-stepper">
+            <svg class="tab-icon" viewBox="0 0 24 24">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            9 Schritte im Detail
+          </button>
+          <button class="meiler-tab-btn" role="tab" id="tab-btn-querschnitt" aria-selected="false"
+            aria-controls="panel-querschnitt" data-target="panel-querschnitt">
+            <svg class="tab-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+            Klickbarer Querschnitt
+          </button>
+          <button class="meiler-tab-btn" role="tab" id="tab-btn-rauch" aria-selected="false" aria-controls="panel-rauch"
+            data-target="panel-rauch">
+            <svg class="tab-icon" viewBox="0 0 24 24">
+              <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2">
+              </path>
+            </svg>
+            Rauchfarben
+          </button>
+        </div>
+
+        <!-- ====================================================================
+             TEIL A: STEPPER (9 SCHRITTE)
+             ==================================================================== -->
+        <div class="meiler-tab-panel active" id="panel-stepper" role="tabpanel" aria-labelledby="tab-btn-stepper">
+          <div class="stepper-container">
+
+            <div class="stepper-progress-wrapper">
+              <div class="stepper-line-track"></div>
+              <div class="stepper-line-fill" id="stepper-line-fill"></div>
+              <div class="stepper-pills-bar" id="stepper-pills-bar" aria-label="Schrittauswahl">
+                <!-- Die 9 Pill-Buttons werden dynamisch durch JavaScript erzeugt -->
+              </div>
+            </div>
+
+            <!-- Hauptinhalt des aktiven Schrittes -->
+            <div class="stepper-body" id="stepper-body-area">
+              <div class="stepper-image-col">
+                <div class="image-placeholder-wrapper ratio-4-3" id="stepper-image-wrapper">
+                  <img id="stepper-img" src="images/aufbau-01-grundriss.jpg" alt="Grundriss abstecken" loading="lazy"
+                    onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
+                    onerror="this.style.display='none'; this.closest('.image-placeholder-wrapper').classList.remove('has-real-image');">
+                  <div class="placeholder-content" id="stepper-placeholder-content">
+                    <svg class="placeholder-icon" viewBox="0 0 24 24">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                      </path>
+                      <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                    <span class="placeholder-tag" id="stepper-placeholder-tag">Schritt 1</span>
+                    <p class="placeholder-text" id="stepper-placeholder-desc">Foto: Der mit pinker Sprühfarbe markierte
+                      Grundriss auf der Kohlstelle</p>
+                    <span class="placeholder-filename"
+                      id="stepper-placeholder-file">images/aufbau-01-grundriss.jpg</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stepper-text-col">
+                <span class="step-counter-tag" id="stepper-counter-text">Schritt 1 von 9</span>
+                <h3 class="step-title" id="stepper-title-text">Grundriss abstecken</h3>
+                <p class="step-desc" id="stepper-desc-text">
+                  Auf der Kohlstelle (dem Meilerplatz) werden der Grundriss mit 6 m Durchmesser sowie die Positionen der
+                  Lüftungsschächte und des Quantelschachtes mit pinker Sprühfarbe markiert. So behalten die Köhler beim
+                  Aufbau die runde Form bei.
+                </p>
+                <div class="step-hint-box" id="stepper-hint-text">
+                  <strong>Köhler-Fakt:</strong> Ein gleichmäßiger Kreis ist entscheidend, damit die Hitze später von der
+                  Mitte gleichmäßig in alle Richtungen wandert.
+                </div>
+              </div>
+            </div>
+
+            <div class="stepper-nav-controls">
+              <button class="btn btn-secondary" id="stepper-btn-prev" aria-label="Vorheriger Schritt">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Zurück
+              </button>
+
+              <button class="btn btn-primary" id="stepper-btn-next" aria-label="Nächster Schritt">
+                Weiter
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TEIL B: REALISTISCHER SVG-QUERSCHNITT
+             ==================================================================== -->
+        <div class="meiler-tab-panel" id="panel-querschnitt" role="tabpanel" aria-labelledby="tab-btn-querschnitt">
+          <div class="cross-section-container">
+            <div class="cross-section-layout">
+
+              <div class="svg-wrapper">
+                <svg class="cross-section-svg" viewBox="0 0 800 520"
+                  aria-label="Detailreicher, realistischer Querschnitt des Kittelsthaler Meilers">
+                  <defs>
+                    <!-- Boden-Verlauf -->
+                    <linearGradient id="grad-boden" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#36251b" />
+                      <stop offset="35%" stop-color="#281a12" />
+                      <stop offset="100%" stop-color="#150e09" />
+                    </linearGradient>
+
+                    <!-- Löscheschicht-Verlauf (feine Holzkohlenasche & Erde) -->
+                    <linearGradient id="grad-loesche-mantel" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#2f2520" />
+                      <stop offset="50%" stop-color="#201915" />
+                      <stop offset="100%" stop-color="#140f0c" />
+                    </linearGradient>
+
+                    <!-- Heuschicht-Verlauf (trockenes Waldgras & Heu) -->
+                    <linearGradient id="grad-heu-mantel" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#a07c36" />
+                      <stop offset="30%" stop-color="#e0b85d" />
+                      <stop offset="70%" stop-color="#cf9f45" />
+                      <stop offset="100%" stop-color="#947128" />
+                    </linearGradient>
+
+                    <!-- Buchenholz-Längsschnitt Verlauf -->
+                    <linearGradient id="grad-holz-scheit" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#8c5832" />
+                      <stop offset="50%" stop-color="#693d20" />
+                      <stop offset="100%" stop-color="#482712" />
+                    </linearGradient>
+
+                    <!-- Buchenholz Stirnholz / Schnittfläche -->
+                    <linearGradient id="grad-holz-stirn" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#b07848" />
+                      <stop offset="100%" stop-color="#6e4221" />
+                    </linearGradient>
+
+                    <!-- Quantelschacht Balken -->
+                    <linearGradient id="grad-quantel-wand" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#5a331a" />
+                      <stop offset="50%" stop-color="#734224" />
+                      <stop offset="100%" stop-color="#44230e" />
+                    </linearGradient>
+
+                    <!-- Feuer & Glut im Quantelschacht (Zentralkamin) -->
+                    <linearGradient id="grad-quantel-feuer" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="12%" stop-color="#ffd56b" />
+                      <stop offset="32%" stop-color="#ff7a18" />
+                      <stop offset="65%" stop-color="#b82a04" />
+                      <stop offset="90%" stop-color="#471104" />
+                      <stop offset="100%" stop-color="#1c0702" />
+                    </linearGradient>
+
+                    <!-- Feine Erd-/Aschepartikel-Textur für die Löscheschicht -->
+                    <pattern id="pat-loesche" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+                      <circle cx="4" cy="4" r="1.1" fill="#4d3b31" opacity="0.4" />
+                      <circle cx="15" cy="8" r="0.8" fill="#5e493c" opacity="0.3" />
+                      <circle cx="8" cy="18" r="1.3" fill="#382921" opacity="0.5" />
+                      <circle cx="20" cy="17" r="0.9" fill="#695143" opacity="0.35" />
+                    </pattern>
+
+                    <!-- Heufaser-Textur -->
+                    <pattern id="pat-heu" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <line x1="2" y1="2" x2="10" y2="18" stroke="#ffe08a" stroke-width="0.8" opacity="0.35" />
+                      <line x1="12" y1="4" x2="18" y2="16" stroke="#87621c" stroke-width="0.7" opacity="0.4" />
+                    </pattern>
+
+                    <!-- Glut-Glow-Filter -->
+                    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="3" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+
+                  <!-- 1. Kohlstelle / Feste Bodenplatte (OHNE Text) -->
+                  <g id="svg-bodenplatte">
+                    <rect x="25" y="445" width="750" height="48" rx="4" fill="url(#grad-boden)" stroke="#422e20"
+                      stroke-width="2" />
+                    <line x1="25" y1="446" x2="775" y2="446" stroke="#634530" stroke-width="2" />
+                    <!-- Verdichtetes Schotterbett & Erdschicht -->
+                    <line x1="25" y1="458" x2="775" y2="458" stroke="#2a1c13" stroke-width="1.5"
+                      stroke-dasharray="14 8" />
+                    <!-- Kleine Kiesel/Stein-Struktur in der Sohle -->
+                    <circle cx="70" cy="466" r="2.5" fill="#5c4433" opacity="0.6" />
+                    <circle cx="180" cy="472" r="3" fill="#4a3526" opacity="0.5" />
+                    <circle cx="310" cy="467" r="2" fill="#5c4433" opacity="0.6" />
+                    <circle cx="490" cy="470" r="3.2" fill="#4a3526" opacity="0.5" />
+                    <circle cx="620" cy="465" r="2.2" fill="#5c4433" opacity="0.6" />
+                    <circle cx="730" cy="473" r="2.8" fill="#4a3526" opacity="0.5" />
+                  </g>
+
+                  <!-- 2. Äußere Hülle: Löscheschicht (Kohlenstoffreiche Erde & Asche) -->
+                  <g id="svg-loescheschicht">
+                    <path d="M 68 445 C 120 375, 235 130, 330 90 L 470 90 C 565 130, 680 375, 732 445 Z"
+                      fill="url(#grad-loesche-mantel)" stroke="#3f3026" stroke-width="2.5" />
+                    <path d="M 68 445 C 120 375, 235 130, 330 90 L 470 90 C 565 130, 680 375, 732 445 Z"
+                      fill="url(#pat-loesche)" />
+                  </g>
+
+                  <!-- 3. Dünne Heuschicht (Schutzlage zwischen Holz und Erde) -->
+                  <g id="svg-heuschicht">
+                    <!-- Band der Heuschicht im Querschnitt (ca. 10px stark) -->
+                    <path
+                      d="M 88 445 C 138 378, 246 137, 336 98 L 464 98 C 554 137, 662 378, 712 445 L 702 445 C 654 381, 548 143, 461 106 L 339 106 C 252 143, 146 381, 98 445 Z"
+                      fill="url(#grad-heu-mantel)" stroke="#876420" stroke-width="1.2" />
+                    <!-- Heufaser-Struktur -->
+                    <path
+                      d="M 88 445 C 138 378, 246 137, 336 98 L 464 98 C 554 137, 662 378, 712 445 L 702 445 C 654 381, 548 143, 461 106 L 339 106 C 252 143, 146 381, 98 445 Z"
+                      fill="url(#pat-heu)" />
+                  </g>
+
+                  <!-- 4. Holzkern-Basis (Hintergrundfüllung für dichtes Holz) -->
+                  <path d="M 98 445 C 146 381, 252 143, 339 106 L 461 106 C 548 143, 654 381, 702 445 Z"
+                    fill="#24140b" />
+
+                  <!-- 5. Buchenholz-Schichten: Realistisch zum Quandelschacht geneigt (~42° Neigung zur Mitte!) -->
+                  <g id="svg-holzschichten">
+                    <!-- =================== LINKE SEITE (Neigung nach RECHTS zum Schacht) =================== -->
+                    <!-- 1. Schicht links (lange 1m-Scheite, stehen auf dem Boden, neigen sich nach rechts zur Mitte) -->
+                    <g transform="rotate(33 135 445)">
+                      <rect x="123" y="315" width="24" height="130" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="135" cy="315" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="135" cy="315" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(36 175 445)">
+                      <rect x="163" y="305" width="24" height="140" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="175" cy="305" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="175" cy="305" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(39 215 445)">
+                      <rect x="203" y="295" width="24" height="150" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="215" cy="295" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="215" cy="295" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(42 255 445)">
+                      <rect x="243" y="285" width="24" height="160" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="255" cy="285" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="255" cy="285" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(44 295 445)">
+                      <rect x="283" y="280" width="24" height="165" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="295" cy="280" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="295" cy="280" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(41 330 445)">
+                      <rect x="318" y="280" width="24" height="165" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="330" cy="280" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+
+                    <!-- 2. Schicht links (obere 0,8m-Scheite, ebenfalls zur Mitte geneigt) -->
+                    <g transform="rotate(37 205 315)">
+                      <rect x="194" y="190" width="22" height="125" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="205" cy="190" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(41 245 305)">
+                      <rect x="234" y="175" width="22" height="130" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="245" cy="175" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(43 285 295)">
+                      <rect x="274" y="160" width="22" height="135" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="285" cy="160" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(44 320 285)">
+                      <rect x="309" y="145" width="22" height="140" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="320" cy="145" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <!-- Kappenholz links oben -->
+                    <g transform="rotate(32 335 195)">
+                      <rect x="325" y="110" width="20" height="90" rx="3" fill="url(#grad-holz-scheit)" stroke="#221106"
+                        stroke-width="1.5" />
+                      <ellipse cx="335" cy="110" rx="10" ry="4" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+
+                    <!-- =================== RECHTE SEITE (Neigung nach LINKS zum Schacht) =================== -->
+                    <!-- 1. Schicht rechts (spiegelbildlich zur Mitte) -->
+                    <g transform="rotate(-33 665 445)">
+                      <rect x="653" y="315" width="24" height="130" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="665" cy="315" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="665" cy="315" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(-36 625 445)">
+                      <rect x="613" y="305" width="24" height="140" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="625" cy="305" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="625" cy="305" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(-39 585 445)">
+                      <rect x="573" y="295" width="24" height="150" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="585" cy="295" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="585" cy="295" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(-42 545 445)">
+                      <rect x="533" y="285" width="24" height="160" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="545" cy="285" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="545" cy="285" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(-44 505 445)">
+                      <rect x="493" y="280" width="24" height="165" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="505" cy="280" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="505" cy="280" r="2.5" fill="none" stroke="#6e3f1e" stroke-width="0.8" />
+                    </g>
+                    <g transform="rotate(-41 470 445)">
+                      <rect x="458" y="280" width="24" height="165" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="470" cy="280" rx="12" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+
+                    <!-- 2. Schicht rechts (obere Scheite) -->
+                    <g transform="rotate(-37 595 315)">
+                      <rect x="584" y="190" width="22" height="125" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="595" cy="190" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(-41 555 305)">
+                      <rect x="544" y="175" width="22" height="130" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="555" cy="175" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(-43 515 295)">
+                      <rect x="504" y="160" width="22" height="135" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="515" cy="160" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <g transform="rotate(-44 480 285)">
+                      <rect x="469" y="145" width="22" height="140" rx="4" fill="url(#grad-holz-scheit)"
+                        stroke="#221106" stroke-width="1.5" />
+                      <ellipse cx="480" cy="145" rx="11" ry="5" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                    <!-- Kappenholz rechts oben -->
+                    <g transform="rotate(-32 465 195)">
+                      <rect x="455" y="110" width="20" height="90" rx="3" fill="url(#grad-holz-scheit)" stroke="#221106"
+                        stroke-width="1.5" />
+                      <ellipse cx="465" cy="110" rx="10" ry="4" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                    </g>
+                  </g>
+
+                  <!-- 6. Vier Lüftungsschächte am Boden (Gezimmerte Bodenkanäle – OHNE Straßen-Optik!) -->
+                  <g id="svg-lueftungskanaele">
+                    <!-- Linker Bodenkanal (Frischluftzufuhr von außen zum Fuß des Quantels) -->
+                    <rect x="95" y="432" width="265" height="4" rx="1" fill="#5c381f" stroke="#2a160a"
+                      stroke-width="1" />
+                    <rect x="95" y="436" width="265" height="9" fill="#130c08" />
+                    <!-- Zarte Luftströmungs-Hinweise -->
+                    <path d="M 115 440 L 135 440 M 130 437 L 135 440 L 130 443" stroke="#6ba5db" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    <path d="M 220 440 L 240 440 M 235 437 L 240 440 L 235 443" stroke="#6ba5db" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+
+                    <!-- Rechter Bodenkanal (symmetrisch) -->
+                    <rect x="440" y="432" width="265" height="4" rx="1" fill="#5c381f" stroke="#2a160a"
+                      stroke-width="1" />
+                    <rect x="440" y="436" width="265" height="9" fill="#130c08" />
+                    <path d="M 685 440 L 665 440 M 670 437 L 665 440 L 670 443" stroke="#6ba5db" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    <path d="M 580 440 L 560 440 M 565 437 L 560 440 L 565 443" stroke="#6ba5db" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                  </g>
+
+                  <!-- 7. Quantelschacht (Zentralkamin in traditioneller Blockbauweise aus kurzen Scheiten) -->
+                  <g id="svg-quantelschacht">
+                    <!-- Kamininnenraum mit Glut, Kohle und Starterhölzern ("Füchse") -->
+                    <rect x="382" y="92" width="36" height="353" fill="url(#grad-quantel-feuer)" />
+
+                    <!-- Glühende Holzspäne & Holzkohlestücke im Kamin -->
+                    <circle cx="400" cy="115" r="3" fill="#ffffff" filter="url(#glow-filter)" />
+                    <circle cx="392" cy="135" r="2.5" fill="#ffe79a" opacity="0.9" />
+                    <circle cx="408" cy="155" r="3.2" fill="#ffbd59" opacity="0.85" />
+                    <circle cx="395" cy="180" r="2" fill="#ff7a18" opacity="0.8" />
+                    <circle cx="405" cy="210" r="2.8" fill="#e8571f" opacity="0.75" />
+                    <circle cx="392" cy="245" r="2" fill="#ff5722" opacity="0.7" />
+                    <circle cx="406" cy="280" r="2.5" fill="#ff3d00" opacity="0.65" />
+                    <circle cx="396" cy="320" r="2" fill="#dd2c00" opacity="0.5" />
+                    <circle cx="402" cy="365" r="2" fill="#881500" opacity="0.45" />
+
+                    <!-- Linke Kaminwand: Im Blockbau kreuzweise geschichtete kurze Buchenhölzer -->
+                    <g id="quantel-wand-links">
+                      <!-- Schicht 1 (oben) -->
+                      <rect x="360" y="92" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="102" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 2 -->
+                      <rect x="360" y="115" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 3 -->
+                      <rect x="360" y="138" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="148" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 4 -->
+                      <rect x="360" y="161" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 5 -->
+                      <rect x="360" y="184" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="194" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 6 -->
+                      <rect x="360" y="207" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 7 -->
+                      <rect x="360" y="230" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="240" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 8 -->
+                      <rect x="360" y="253" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 9 -->
+                      <rect x="360" y="276" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="286" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 10 -->
+                      <rect x="360" y="299" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 11 -->
+                      <rect x="360" y="322" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="332" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 12 -->
+                      <rect x="360" y="345" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 13 -->
+                      <rect x="360" y="368" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="378" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <!-- Schicht 14 -->
+                      <rect x="360" y="391" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <!-- Schicht 15 (Fuß) -->
+                      <rect x="360" y="414" width="22" height="31" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="371" cy="428" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                    </g>
+
+                    <!-- Rechte Kaminwand (symmetrisch gezimmerter Blockbau) -->
+                    <g id="quantel-wand-rechts">
+                      <rect x="418" y="92" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <rect x="418" y="115" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="125" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="138" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="161" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="171" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="184" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="207" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="217" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="230" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="253" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="263" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="276" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="299" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="309" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="322" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="345" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="355" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="368" width="22" height="21" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                      <rect x="418" y="391" width="22" height="21" rx="2" fill="url(#grad-holz-stirn)" stroke="#221106"
+                        stroke-width="1.2" />
+                      <circle cx="429" cy="401" r="4" fill="none" stroke="#542e13" stroke-width="0.8" />
+                      <rect x="418" y="414" width="22" height="31" rx="2" fill="url(#grad-quantel-wand)"
+                        stroke="#221106" stroke-width="1.2" />
+                    </g>
+                  </g>
+
+                  <!-- 8. Pfeifen (Luftlöcher) – Gerade eingestochen ohne Kurven! -->
+                  <g id="svg-pfeifen">
+                    <!-- Pfeife Links: gerader zylindrischer Einstichkanal durch Lösche & Heu -->
+                    <rect x="145" y="244" width="85" height="12" rx="2" fill="#120c08" stroke="#ff753a"
+                      stroke-width="1.5" />
+                    <ellipse cx="230" cy="250" rx="3.5" ry="5.5" fill="#ff5722" />
+                    <ellipse cx="145" cy="250" rx="4" ry="6" fill="#e8571f" stroke="#ffffff" stroke-width="1.5" />
+                    <path d="M 143 248 C 130 235, 138 215, 128 195 C 120 178, 130 162, 124 145" fill="none"
+                      stroke="rgba(195, 218, 240, 0.5)" stroke-width="2.5" stroke-linecap="round" />
+
+                    <!-- Pfeife Rechts: symmetrischer gerader zylindrischer Einstichkanal -->
+                    <rect x="570" y="244" width="85" height="12" rx="2" fill="#120c08" stroke="#ff753a"
+                      stroke-width="1.5" />
+                    <ellipse cx="570" cy="250" rx="3.5" ry="5.5" fill="#ff5722" />
+                    <ellipse cx="655" cy="250" rx="4" ry="6" fill="#e8571f" stroke="#ffffff" stroke-width="1.5" />
+                    <path d="M 657 248 C 670 235, 662 215, 672 195 C 680 178, 670 162, 676 145" fill="none"
+                      stroke="rgba(195, 218, 240, 0.5)" stroke-width="2.5" stroke-linecap="round" />
+                  </g>
+
+                  <!-- ==================================================================
+                       9. INTERAKTIVE HOTSPOTS (BEIDE PFEIFEN AKTIVIERBAR!)
+                       ================================================================== -->
+                  <!-- Hotspot 1: Quantelschacht (Zentrum) -->
+                  <g class="hotspot active" id="hotspot-quantel" data-id="quantel" role="button" tabindex="0"
+                    aria-label="Quantelschacht">
+                    <circle class="hotspot-pulse" cx="400" cy="180" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="400" cy="180" r="11" fill="#e8571f" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="400" y="184" text-anchor="middle" font-size="11">1</text>
+                  </g>
+
+                  <!-- Hotspot 2: Buchenholz-Schichten -->
+                  <g class="hotspot" id="hotspot-holz" data-id="holz" role="button" tabindex="0"
+                    aria-label="Buchenholz-Schichten">
+                    <circle class="hotspot-pulse" cx="250" cy="335" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="250" cy="335" r="11" fill="#e8571f" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="250" y="339" text-anchor="middle" font-size="11">2</text>
+                  </g>
+
+                  <!-- Hotspot 3: Lüftungsschächte -->
+                  <g class="hotspot" id="hotspot-lueftung" data-id="lueftung" role="button" tabindex="0"
+                    aria-label="Lüftungsschächte">
+                    <circle class="hotspot-pulse" cx="190" cy="439" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="190" cy="439" r="11" fill="#e8571f" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="190" y="443" text-anchor="middle" font-size="11">3</text>
+                  </g>
+
+                  <!-- Hotspot 4: Heuschicht -->
+                  <g class="hotspot" id="hotspot-heu" data-id="heu" role="button" tabindex="0" aria-label="Heuschicht">
+                    <circle class="hotspot-pulse" cx="590" cy="185" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="590" cy="185" r="11" fill="#e8571f" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="590" y="189" text-anchor="middle" font-size="11">4</text>
+                  </g>
+
+                  <!-- Hotspot 5: Löscheschicht -->
+                  <g class="hotspot" id="hotspot-loesche" data-id="loesche" role="button" tabindex="0"
+                    aria-label="Löscheschicht">
+                    <circle class="hotspot-pulse" cx="680" cy="355" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="680" cy="355" r="11" fill="#e8571f" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="680" y="359" text-anchor="middle" font-size="11">5</text>
+                  </g>
+
+                  <!-- Hotspot 6 LINKS: Pfeife (Luftloch) -->
+                  <g class="hotspot" id="hotspot-pfeifen" data-id="pfeifen" role="button" tabindex="0"
+                    aria-label="Pfeife links (Luftloch)">
+                    <circle class="hotspot-pulse" cx="145" cy="250" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="145" cy="250" r="11" fill="#ff753a" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="145" y="254" text-anchor="middle" font-size="11">6</text>
+                  </g>
+
+                  <!-- Hotspot 6 RECHTS: Pfeife (Luftloch – Voll interaktiv & klickbar!) -->
+                  <g class="hotspot" id="hotspot-pfeifen-right" data-id="pfeifen" role="button" tabindex="0"
+                    aria-label="Pfeife rechts (Luftloch)">
+                    <circle class="hotspot-pulse" cx="655" cy="250" r="16" fill="none" stroke="#e8571f"
+                      stroke-width="2" />
+                    <circle class="hotspot-core" cx="655" cy="250" r="11" fill="#ff753a" stroke="#ffffff"
+                      stroke-width="2" />
+                    <text x="655" y="254" text-anchor="middle" font-size="11">6</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Info-Karte -->
+              <div class="hotspot-info-card">
+                <span class="hotspot-info-badge" id="hotspot-badge-text">Komponente 1 von 6</span>
+                <h4 class="hotspot-info-title" id="hotspot-title-text">Der Quantelschacht</h4>
+                <p class="hotspot-info-desc" id="hotspot-desc-text">
+                  Der quadratische Zentralkamin aus ca. 20 cm kurzen Buchenholzscheiten. Er wächst bis auf 2,5 m Höhe
+                  und wird beim Anzünden mit Füchsen, Holzkohle und Glut befüllt. Durch ihn zieht das Feuer von oben
+                  nach unten.
+                </p>
+
+                <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 0.6rem;">Punkte direkt
+                  anwählen:</p>
+                <div class="hotspot-selection-list">
+                  <button class="hotspot-btn-pill active" data-id="quantel">1. Quantel</button>
+                  <button class="hotspot-btn-pill" data-id="holz">2. Holzschichten</button>
+                  <button class="hotspot-btn-pill" data-id="lueftung">3. Lüftungsschächte</button>
+                  <button class="hotspot-btn-pill" data-id="heu">4. Heuschicht</button>
+                  <button class="hotspot-btn-pill" data-id="loesche">5. Löscheschicht</button>
+                  <button class="hotspot-btn-pill" data-id="pfeifen">6. Pfeifen</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TEIL C: RAUCHFARBEN (OHNE DETEKTIV, SCHWARZER RAUCH SICHTBAR)
+             ==================================================================== -->
+        <div class="meiler-tab-panel" id="panel-rauch" role="tabpanel" aria-labelledby="tab-btn-rauch">
+          <div class="smoke-detective-container">
+
+            <div class="smoke-detective-layout">
+              <!-- Hellerer Abendhimmel: Auch schwarzer Rauch ist perfekt sichtbar! -->
+              <div class="smoke-simulation-box" aria-hidden="true">
+                <div class="smoke-plume-wrapper smoke-blue" id="smoke-plume">
+                  <div class="smoke-puff"></div>
+                  <div class="smoke-puff"></div>
+                  <div class="smoke-puff"></div>
+                  <div class="smoke-puff"></div>
+                </div>
+                <div class="mini-meiler-silhouette"></div>
+                <span
+                  style="font-size: 0.78rem; color: #cfc4b8; z-index: 6; margin-top: 0.4rem; font-weight: 500;">Simulierter
+                  Meiler</span>
+              </div>
+
+              <div>
+                <p
+                  style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-amber); font-weight: 700; margin-bottom: 0.5rem;">
+                  Was der Rauch verrät
+                </p>
+                <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin-bottom: 1.2rem;">
+                  Wähle eine Rauchfarbe:
+                </h3>
+
+                <div class="smoke-options-grid">
+                  <button class="smoke-card-btn active" data-color="blue" id="smoke-btn-blue">
+                    <span class="smoke-color-dot dot-blue"></span>
+                    <span class="smoke-card-title">Blauer Rauch</span>
+                  </button>
+                  <button class="smoke-card-btn" data-color="white" id="smoke-btn-white">
+                    <span class="smoke-color-dot dot-white"></span>
+                    <span class="smoke-card-title">Weißer Rauch</span>
+                  </button>
+                  <button class="smoke-card-btn" data-color="yellow" id="smoke-btn-yellow">
+                    <span class="smoke-color-dot dot-yellow"></span>
+                    <span class="smoke-card-title">Gelb-brauner Rauch</span>
+                  </button>
+                  <button class="smoke-card-btn" data-color="black" id="smoke-btn-black">
+                    <span class="smoke-color-dot dot-black"></span>
+                    <span class="smoke-card-title">Schwarzer Rauch</span>
+                  </button>
+                </div>
+
+                <div class="smoke-explanation-box">
+                  <h4 class="smoke-exp-title" id="smoke-exp-title">Blauer, harzig riechender Rauch</h4>
+                  <p class="smoke-exp-text" id="smoke-exp-text">
+                    Die Kohle ist an dieser Stelle weitgehend fertig verkohlt! Der Köhler weiß nun: Diese Pfeife kann
+                    verschlossen und 15 bis 20 cm weiter unten ein neues Luftloch gestochen werden.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.4 WISSENSBOX: KÖHLER-LEXIKON (DAUERHAFT AUSGEKLAPPT IM RASTER)
+         ========================================================================== -->
+    <section class="section section-base" id="begriffe">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Köhler-Lexikon</span>
+          <h2 class="section-title">Wichtige Begriffe einfach erklärt</h2>
+          <p class="section-subtitle">
+            Die Fachsprache der Köhler hat sich über viele Jahrhunderte entwickelt. Hier findest du die wichtigsten
+            Grundlagen auf einen Blick.
+          </p>
+        </div>
+
+        <!-- Dauerhaft ausgeklapptes, klares Kartenraster -->
+        <div class="begriffe-grid" id="begriffe-container">
+          <!-- Wird dynamisch aus INHALTE.begriffe erzeugt -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.5 ZEITSTRAHL: DIE GESCHICHTE DES KÖHLERHANDWERKS
+         ========================================================================== -->
+    <section class="section" id="geschichte">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Historischer Überblick</span>
+          <h2 class="section-title">Die Geschichte des Köhlerhandwerks</h2>
+          <p class="section-subtitle">
+            Von den ersten gehärteten Holzspeeren der Altsteinzeit über die Bronzezeit und die Entstehung der
+            Nachhaltigkeit bis zum immateriellen Kulturerbe der Gegenwart.
+          </p>
+        </div>
+
+        <div class="timeline-container" id="timeline-container">
+          <!-- Wird dynamisch aus INHALTE.zeitleiste erzeugt -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.6 DER KITTELSTHALER MEILER E. V.
+         ========================================================================== -->
+    <section class="section section-base" id="verein">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Traditionspflege vor Ort</span>
+          <h2 class="section-title">Der Kittelsthaler Meiler e. V.</h2>
+          <p class="section-subtitle">
+            Wie engagierte Familien und ein erfahrener Ruhlaer Berufsköhler das fast ausgestorbene Brauchtum in
+            Westthüringen für kommende Generationen gerettet haben.
+          </p>
+        </div>
+
+        <div class="verein-milestones reveal-on-scroll">
+          <div class="verein-milestone-card">
+            <div class="milestone-year">1987</div>
+            <p class="milestone-text">Erster Meiler am Kalkteich durch Jürgen von Roda und 7 befreundete Familien. Das
+              Wissen gab ein Ruhlaer Berufsköhler mündlich weiter.</p>
+          </div>
+          <div class="verein-milestone-card">
+            <div class="milestone-year">1993</div>
+            <p class="milestone-text">Zum vorerst letzten Mal wird auf traditionelle Weise geköhlert, bevor eine längere
+              Ruhepause eintrat.</p>
+          </div>
+          <div class="verein-milestone-card">
+            <div class="milestone-year">2014</div>
+            <p class="milestone-text">Gründung des Vereins „Kittelsthaler Meiler e. V.“ und erfolgreiche Wiederbelebung
+              des traditionsreichen Handwerks.</p>
+          </div>
+          <div class="verein-milestone-card">
+            <div class="milestone-year">2022</div>
+            <p class="milestone-text">Offizielle Aufnahme des Kittelsthaler Meiler e. V. als Mitglied im Europäischen
+              Köhlerverband.</p>
+          </div>
+          <div class="verein-milestone-card">
+            <div class="milestone-year">Heute</div>
+            <p class="milestone-text">31 aktive Mitglieder aller Altersgruppen errichten alle zwei Jahre in der
+              Himmelfahrtswoche gemeinsam den Meiler.</p>
+          </div>
+        </div>
+
+        <div class="verein-features-grid">
+          <div class="image-placeholder-wrapper ratio-4-3 reveal-on-scroll">
+            <img src="images/unterricht-im-freien.jpg" alt="Schulklasse beim Unterricht im Freien am Meiler"
+              loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
+              onerror="this.style.display='none';">
+            <div class="placeholder-content">
+              <svg class="placeholder-icon" viewBox="0 0 24 24">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span class="placeholder-tag">Pädagogik vor Ort</span>
+              <p class="placeholder-text">Foto: Schulklasse beim Lernen und Bau eines Mini-Meilers im Freien</p>
+              <span class="placeholder-filename">images/unterricht-im-freien.jpg</span>
+            </div>
+          </div>
+
+          <div class="concept-card reveal-on-scroll">
+            <span class="concept-tag">Bildungskonzept für Schulen</span>
+            <h3 class="concept-title">Unterricht im Freien</h3>
+            <p class="concept-text">
+              Schulklassen aus der Region besuchen den Meilerplatz und verbinden ihren Wandertag mit einem lebendigen
+              Geschichts- und Naturwissenschaftsunterricht.
+            </p>
+            <p class="concept-text">
+              Das Handwerk wird direkt erlebbar: Die Schüler helfen beim Bau eines Mini-Meilers mit, schichten Scheite
+              auf und können echte, frisch gebrannte Holzkohle anfassen.
+            </p>
+
+            <div class="person-card">
+              <span class="person-role">Zentrale Person & Außenbetreuer der Seminarfachgruppe:</span>
+              <span class="person-name">Jürgen von Roda, Hobbyköhler</span>
+              <div>
+                <span class="todo-badge">[TODO: Prüfen, ob sein Name auf der Website genannt werden darf.]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fest-invite-card reveal-on-scroll">
+          <h3 class="fest-title">Komm vorbei zum Kittelsthaler Meilerfest</h3>
+          <p class="fest-cycle">Alle zwei Jahre in der Himmelfahrtswoche in Kittelsthal (Ruhla)</p>
+          <p class="fest-desc">
+            Erlebe das feierliche Anzünden hautnah, spüre die Hitze der Kohlstelle, lausche dem traditionellen Gruß „Gut
+            Brand!“ und nimm frisch gebrannte Holzkohle direkt vom Meiler mit nach Hause.
+          </p>
+          <div>
+            <span class="todo-badge">[TODO: Datum des nächsten Meilerfestes eintragen.]</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5.7 ÜBER DIESES PROJEKT
+         ========================================================================== -->
+    <section class="section" id="projekt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Seminarfacharbeit</span>
+          <h2 class="section-title">Über dieses Projekt</h2>
+          <p class="section-subtitle">
+            „Traditionelles Köhlerhandwerk in Westthüringen – Ein Konzept zur Bewahrung eines immateriellen Kulturerbes“
+          </p>
+        </div>
+
+        <div
+          style="max-width: 820px; margin: 0 auto; color: var(--color-text-sub); font-size: 1.05rem; line-height: 1.7;"
+          class="reveal-on-scroll">
+          <p style="margin-bottom: 1.2rem;">
+            Diese Website entstand im Rahmen einer <strong>Seminarfacharbeit</strong> von Schülern. Sie ergänzt die
+            Vermittlung vor Ort sowie die Vorträge am Meilerfest und wurde auf Basis eigener Recherchen, fotografischer
+            Dokumentation und intensiver Gespräche mit den aktiven Köhlern des <em>Kittelsthaler Meiler e. V.</em>
+            erarbeitet.
+          </p>
+          <p style="margin-bottom: 1.5rem;">
+            Die Website wird nach Abschluss der Arbeit an den Verein übergeben, damit dieser sie eigenständig pflegen
+            und künftig mit neuen Fotos erweitern kann. Zudem dient sie auf einem Bildschirm in der Touristinformation
+            Ruhla als interaktive Dauerausstellung.
+          </p>
+
+          <div
+            style="background: var(--color-bg-card); padding: 1.2rem 1.6rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-ember); margin-bottom: 2rem; border-top: 1px solid var(--color-border-subtle); border-right: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);">
+            <p style="margin-bottom: 0.4rem; color: #ffffff;"><strong>Schule & Schuljahr:</strong></p>
+            <span class="todo-badge">[TODO: Schulname und Schuljahr eintragen.]</span>
+          </div>
+
+          <div style="font-size: 0.92rem; color: var(--color-text-muted);">
+            <p><strong>Quellenhinweis & weiterführende Informationen:</strong></p>
+            <p>Europäischer Köhlerverband e. V. sowie Dokumentationen des Kittelsthaler Meiler e. V.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-title">Kittelsthaler Meiler e. V.</h4>
+          <p class="footer-text">
+            Ortsteil Kittelsthal der Stadt Ruhla in Westthüringen.<br>
+            Bewahrung des traditionellen Köhlerhandwerks als immaterielles Kulturerbe in Deutschland.
+          </p>
+          <p style="font-size: 0.82rem; color: var(--color-text-muted);">
+            Diese One-Page-Website setzt keine Tracking-Cookies und lädt keinerlei externe Schriftarten nach (100%
+            offline-fähig).
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#meileraufbau" class="footer-link">Meileraufbau (9 Schritte)</a></li>
+            <li><a href="#begriffe" class="footer-link">Köhler-Lexikon</a></li>
+            <li><a href="#geschichte" class="footer-link">Geschichte & Zeitstrahl</a></li>
+            <li><a href="#verein" class="footer-link">Der Verein</a></li>
+            <li><a href="#bilder" class="footer-link" id="dev-image-trigger">Entwickler: Bildstatus (#bilder)</a></li>
+            <li><a href="#ausstellung" class="footer-link">Ausstellungsmodus aktivieren (#ausstellung)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Seminarfachgruppe Köhlerhandwerk & Kittelsthaler Meiler e. V.
+        </div>
+        <div>
+          „Gut Brand!“ – Tradition & Kulturerbe in Westthüringen
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Zurück-nach-oben Button -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Modal für Bildstatus (#bilder) -->
+  <div class="dev-modal" id="dev-modal" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
+    <div class="dev-modal-content">
+      <button class="dev-modal-close" id="dev-modal-close" aria-label="Schließen">&times;</button>
+      <h3 id="dev-modal-title"
+        style="font-family: var(--font-serif); font-size: 1.6rem; color: #ffffff; margin-bottom: 0.6rem;">
+        Bildstatus & Anleitung für den Verein
+      </h3>
+      <p style="font-size: 0.95rem; color: var(--color-text-sub); margin-bottom: 1rem;">
+        Diese Liste zeigt alle 12 Bilder der Website. Lege einfach deine Fotos mit den angegebenen Dateinamen im Ordner
+        <code>images/</code> neben der <code>index.html</code> ab. Sobald eine Datei existiert, wird der Platzhalter
+        automatisch durch das Foto ersetzt.
+      </p>
+
+      <ul class="dev-image-list" id="dev-image-list">
+        <!-- Wird durch JavaScript befüllt -->
+      </ul>
+
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button class="btn btn-secondary" id="dev-modal-close-btn">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       JAVASCRIPT
+       ========================================================================== */
+  -->
+  <script>
+    /* ==========================================================================
+       HINWEIS FÜR DEN VEREIN „KITTELSTHALER MEILER E. V.“:
+       Alle Texte, Schritte, Begriffe und Zeitleisteneinträge sind hier im Objekt
+       `INHALTE` übersichtlich gesammelt.
+       Du kannst Texte und Erklärungen hier direkt in den Anführungszeichen "..."
+       bearbeiten, ohne dich mit dem restlichen HTML- oder JavaScript-Code
+       auskennen zu müssen!
+       ========================================================================== */
+
+    const INHALTE = {
+      // ------------------------------------------------------------------------
+      // 1. SCHRITTE DES MEILERAUFBAUS (9 SCHRITTE)
+      // ------------------------------------------------------------------------
+      schritte: [
+        {
+          nr: 1,
+          titel: "Grundriss abstecken",
+          bild: "images/aufbau-01-grundriss.jpg",
+          bildDesc: "Foto: Der mit pinker Sprühfarbe markierte Grundriss auf der Kohlstelle",
+          text: "Auf der Kohlstelle (dem Meilerplatz) werden der Grundriss mit 6 m Durchmesser sowie die Positionen der Lüftungsschächte und des Quantelschachtes mit pinker Sprühfarbe markiert. So behalten die Köhler beim Aufbau die runde Form bei.",
+          tipp: "Ein exakter Kreis ist entscheidend, damit die Hitze später von der Mitte gleichmäßig in alle Himmelsrichtungen wandert."
+        },
+        {
+          nr: 2,
+          titel: "Holz sortieren und Quantelschacht bauen",
+          bild: "images/aufbau-02-quantelschacht.jpg",
+          bildDesc: "Foto: Der Quantelschacht in der Mitte des Grundrisses",
+          text: "Das Buchenholz wird in Scheite von 100 cm, 50 cm und 20 cm sortiert. In der Mitte entsteht der Quantelschacht aus etwa 20 cm langen Scheiten, die quadratisch gestapelt werden. Zuerst wird er nur 100 cm hoch gebaut, damit die erste Holzschicht von ihm aus nach außen gestapelt werden kann. Später wächst er bis auf 2,5 m.",
+          tipp: "Der Quantelschacht ist der zentrale Kamin des Meilers, über den später die Glut eingebracht wird."
+        },
+        {
+          nr: 3,
+          titel: "Lüftungsschächte und Grundplatte",
+          bild: "images/aufbau-03-lueftungsschacht.jpg",
+          bildDesc: "Foto: Grundplatte mit den vier Lüftungsschächten",
+          text: "Vom Quantelschacht aus verlaufen vier Lüftungsschächte bis zum äußeren Rand. Der restliche Teil der Grundplatte wird mit längeren Scheiten strahlenförmig (radial) von der Mitte nach außen gefüllt.",
+          tipp: "Die vier Schächte garantieren die Frischluftzufuhr am Boden und lassen sich während des Brandes gezielt regulieren."
+        },
+        {
+          nr: 4,
+          titel: "Erste Holzschicht aufstellen",
+          bild: "images/aufbau-04-erste-schicht.jpg",
+          bildDesc: "Foto: Köhler beim dichten Aufschichten der ersten Schicht (ca. 42° Neigung)",
+          text: "Die 100 cm langen Scheite werden senkrecht, in einem Winkel von etwa 42°, an den Quantelschacht gelehnt. Je aufrechter das Holz steht, desto ruhiger verläuft die Verkohlung und desto fester wird die Kohle. Das Holz wird möglichst dicht gestapelt, Lücken werden mit kleinen Hölzern und Spänen gefüllt, damit es nicht unkontrolliert verbrennt. Dicke, schwere Scheite kommen nach unten, weil sie länger zum Verkohlen brauchen.",
+          tipp: "Keine Lücken lassen! Luftlöcher im Holzstapel würden zu offenem Feuer führen – das Holz würde verbrennen statt verkohlen."
+        },
+        {
+          nr: 5,
+          titel: "Weitere Schichten und Form",
+          bild: "images/aufbau-05-form.jpg",
+          bildDesc: "Foto: Fast fertig aufgeschichteter Meiler in Kegelstumpfform",
+          text: "Auf die erste Schicht kommt eine zweite. Der Winkel der Scheite wird immer flacher, damit der Meiler nach außen abflacht und die spätere Abdeckung hält. Am Ende ähnelt der Meiler einem abgeflachten Kegel. Die Oberfläche ist so beschaffen, dass der Köhler später sicher auf dem Meiler stehen und den Quantelschacht erreichen kann.",
+          tipp: "Die Kegelform sorgt dafür, dass Regenwasser ablaufen kann und die schwere Erdabdeckung nicht abrutscht."
+        },
+        {
+          nr: 6,
+          titel: "Abdecken mit Heu und Löscheschicht",
+          bild: "images/aufbau-06-abdeckung.jpg",
+          bildDesc: "Foto: Meiler mit dünner Heuschicht und dichter Löscheschicht",
+          text: "Zuerst kommt eine dünne Heuschicht darauf, die verhindert, dass die Abdeckung hineinrieselt, und die Löscheschicht hält. Sie darf nicht zu dick sein, weil Heu leicht entzündlich ist. Darauf kommt die dickere Löscheschicht: Erde vom vorigen Meiler, die vom früheren Verkohlungsprozess mit Kohlenstoff durchsetzt ist. Sie schließt den Meiler luftdicht ab.",
+          tipp: "Alte Meilererde („Lösche“) ist besonders wertvoll: Durch ihren Kohlenstoffgehalt isoliert sie die Hitze perfekt."
+        },
+        {
+          nr: 7,
+          titel: "Anzünden („Gut Brand!“)",
+          bild: "images/aufbau-07-anzuenden.jpg",
+          bildDesc: "Foto: Der Köhler auf dem Meiler beim Befüllen des Quantelschachtes mit Glut",
+          text: "Über eine angelehnte Leiter steigt der Köhler auf den Meiler und füllt den Quantelschacht mit „Füchsen“ (nicht vollständig durchgezogenen Holzkohleresten des letzten Meilers), Holzkohle und Glut aus einer Feuerschale. Alle vier Lüftungsschächte sind offen. Durch den Schloteffekt wird Luft hineingezogen, der Meiler zündet von innen heraus und die Verschwelung beginnt. Köhlergruß: „Gut Brand!“",
+          tipp: "Der Schloteffekt saugt den Sauerstoff kräftig durch die vier Bodenschächte nach oben und entfacht den Brandherd."
+        },
+        {
+          nr: 8,
+          titel: "Beobachten und regulieren",
+          bild: "images/aufbau-08-beobachten.jpg",
+          bildDesc: "Foto: Pfeifen (Luftlöcher) und Rauchkontrolle rund um den Meiler",
+          text: "Die schwierigste und wichtigste Phase. Der Meiler wird Tag und Nacht überwacht. Der Köhler hat drei Mittel: die Luftschächte (Luftzufuhr steuern), das Verdichten der Deckschicht (weniger Sauerstoff, Hitze dämpfen) und das Auffüllen eingesunkener Stellen mit frischem Holz, aber nie an der Windseite. Das wichtigste Mittel sind die „Pfeifen“: kleine Luftlöcher, die mit der Quantelstange von oben in die Deckschicht gestochen werden, etwa alle drei Stunden nachgestochen und geprüft. Lässt sich die Stange an einer Stelle bis ins Innere schieben, ist die Kohle dort fertig, die Pfeife wird verschlossen und etwa 15 bis 20 cm weiter unten wird eine neue gestochen. So arbeitet sich der Köhler von oben nach unten durch den Meiler. Mit der „Bratschn“ oder Kohlenschaufel wird auf den Meiler geschlagen, um Hohlräume zu schließen.",
+          tipp: "Das Klopfen mit der Bratschn verdichtet das absackende Holz und verhindert lebensgefährliche Hohlräume im Meiler."
+        },
+        {
+          nr: 9,
+          titel: "Die Ernte",
+          bild: "images/aufbau-09-ernte.jpg",
+          bildDesc: "Foto: Köhler bei der Kohleernte mit Atemschutz und Löschwasser",
+          text: "Der anstrengendste Arbeitsschritt am Ende der Woche. Beim Öffnen enthält die Luft im Meiler viel Kohlenstoffdioxid, deshalb ist Atemschutz nötig. Der Meiler wird nur schrittweise geöffnet, damit nicht zu viel Sauerstoff an die Kohle kommt und sie sich neu entzündet. Die Kohle wird geerntet, von den Füchsen getrennt, mit Wasser abgelöscht und zum Trocknen auf eine Plane gelegt. Danach wird sie gewogen und in Säcke verpackt. An der Ausbeute erkennt der Köhler, wie gut der Meiler gelungen ist. Gute Kohle ist groß, fest, schwer, schwarz, glänzt auf dem Bruch, färbt nicht ab und klingt beim Anschlagen.",
+          tipp: "Qualitäts-Test: Wenn man zwei Stücke Holzkohle aneinanderschlägt, müssen sie hell und metallisch klingen!"
+        }
+      ],
+
+      // ------------------------------------------------------------------------
+      // 2. KÖHLER-LEXIKON
+      // ------------------------------------------------------------------------
+      begriffe: [
+        {
+          begriff: "Kohlstelle",
+          erklaerung: "Der ebene, sorgfältig vorbereitete Platz im Wald, auf dem der Meiler steht und gebaut wird."
+        },
+        {
+          begriff: "Quantelschacht",
+          erklaerung: "Der mittlere, vertikale Schacht des Meilers, der von oben mit Füchsen, Holzkohle und glühenden Kohlen befüllt wird, um den Meiler zu zünden."
+        },
+        {
+          begriff: "Löscheschicht",
+          erklaerung: "Die luftdichte Erdschicht ganz außen auf dem Meiler. Sie besteht aus mit feinem Holzkohlestaub angereicherter Erde früherer Meiler."
+        },
+        {
+          begriff: "Füchse",
+          erklaerung: "Nicht vollständig durchgezogene Holzkohlereste des letzten Meilers. Sie eignen sich hervorragend zum erneuten Zünden des nächsten Meilers."
+        },
+        {
+          begriff: "Pfeifen",
+          erklaerung: "Kleine Luftlöcher in der Deckschicht, mit denen der Köhler den Sauerstofffluss und das Wandern der Glutzone im Meiler präzise steuert."
+        },
+        {
+          begriff: "Quantelstange",
+          erklaerung: "Das unverzichtbare stangenförmige Hilfsmittel des Köhlers, mit dem die Pfeifen (Luftlöcher) in die Hülle gestochen und geprüft werden."
+        },
+        {
+          begriff: "Bratschn",
+          erklaerung: "Ein flaches Schlagwerkzeug (oft aus Holz, alternativ die breite Kohlenschaufel), mit dem von außen auf den Meiler geklopft wird, um innere Hohlräume zu schließen."
+        },
+        {
+          begriff: "Verkohlung / Verschwelung",
+          erklaerung: "Der thermochemische Prozess: Holz wird unter kontrolliertem Luftmangel stark erhitzt. Wasser und Gase entweichen, ohne dass das Holz zu Asche verbrennt – es entsteht reine Holzkohle."
+        }
+      ],
+
+      // ------------------------------------------------------------------------
+      // 3. GESCHICHTE DES KÖHLERHANDWERKS (DIE ZEITLEISTE)
+      // ------------------------------------------------------------------------
+      zeitleiste: [
+        {
+          jahr: "vor ca. 300.000 Jahren",
+          titel: "Die Speere von Schöningen",
+          text: "Der Frühmensch härtete in Niedersachsen die hölzernen Spitzen seiner Jagdspeere durch gezieltes Ankohlen im offenen Feuer."
+        },
+        {
+          jahr: "vor ca. 10.000 Jahren",
+          titel: "Birkenpech als Steinzeit-Kleber",
+          text: "Menschen gewinnen Birkenpech durch Erhitzen von Rinde unter Luftabschluss. Funde mit Zahnabdrücken zeigen die Nutzung als 'Kaugummi' und vor 9.000 Jahren als Hochleistungskleber für Pfeilspitzen."
+        },
+        {
+          jahr: "Ende der Jungsteinzeit",
+          titel: "Erste Metallschmelzen (z. B. Ötzi)",
+          text: "Für das Schmelzen von Kupfer (wie beim Kupferbeil des Gletschermannes 'Ötzi') reicht normales Holzfeuer nicht aus. Man benötigt die enorme, gleichmäßige Hitze von Holzkohle – der eigentliche Ursprung des Köhlerhandwerks."
+        },
+        {
+          jahr: "Bronzezeit",
+          titel: "Entstehung der Grubenköhlerei",
+          text: "Holz wird in Erdmulden und Gruben aufgeschichtet und unter Luftabschluss verkohlt, wie frühbronzezeitliche Schmelzplätze in Ramsau (Steiermark) belegen."
+        },
+        {
+          jahr: "ca. 400 v. Chr.",
+          titel: "Antike Standmeiler",
+          text: "Im antiken Griechenland beschreibt Theophrast als Erster oberirdische Standmeiler und dokumentiert den Einfluss der Baumart auf die Kohlequalität. Auch bei den Römern (Plinius der Ältere) weit verbreitet."
+        },
+        {
+          jahr: "ab dem 14. Jahrhundert",
+          titel: "Boom durch den Bergbau",
+          text: "Der Bergbau und die Eisenhütten wachsen rasant. Der stehende Rundmeiler setzt sich für die Massenproduktion durch. Unzählige alte Meilerplätze in Mittelgebirgswäldern wie dem Thüringer Wald erinnern bis heute daran."
+        },
+        {
+          jahr: "um 1540",
+          titel: "Erforschung der Holzsorten",
+          text: "Gießereimeister Biringuccio erforscht systematisch Holzkohlesorten und rät dazu, verschiedene Holzarten beim Verkohlen strikt zu trennen."
+        },
+        {
+          jahr: "1713",
+          titel: "Ursprung der Nachhaltigkeit",
+          text: "Hannß Carl von Carlowitz beschreibt in seiner 'Silvicultura Oeconomica' den gesamten Köhlerprozess und prägt erstmals den Begriff der Nachhaltigkeit, da die Wälder durch den enormen Holzhunger bedroht waren."
+        },
+        {
+          jahr: "1761",
+          titel: "Wissenschaftliche Dokumentation",
+          text: "Duhamel du Monceau vergleicht in 'L’art du carbonnier' die Verfahren, entdeckt die tödliche Gefahr von Kohlenmonoxid und stellt fest, dass Holzkohle nur 20–25 % des ursprünglichen Holzgewichts wiegt."
+        },
+        {
+          jahr: "ab ca. 1820",
+          titel: "Industrielle Retortenanlagen",
+          text: "Die Industrielle Revolution setzt auf geschlossene Eisenretorten, da sich darin wertvolle Nebenprodukte wie Holzteer, Holzessig und brennbare Holzgase auffangen lassen."
+        },
+        {
+          jahr: "20. Jahrhundert",
+          titel: "Verdrängung durch Steinkohle & Gas",
+          text: "Fossile Steinkohle, Koks, Erdgas und Strom machen die klassische Meilerköhlerei unrentabel. Das Handwerk verschwindet fast vollständig aus der Industrie."
+        },
+        {
+          jahr: "seit 2014",
+          titel: "Immaterielles Kulturerbe",
+          text: "Die traditionelle Köhlerei wird in das bundesweite Verzeichnis des immateriellen Kulturerbes in Deutschland aufgenommen. Heute wird das Wissen von engagierten Vereinen wie dem Kittelsthaler Meiler e. V. lebendig bewahrt."
+        }
+      ],
+
+      // ------------------------------------------------------------------------
+      // 4. QUERSCHNITT-HOTSPOTS (TEIL B)
+      // ------------------------------------------------------------------------
+      hotspots: {
+        quantel: {
+          badge: "Komponente 1 von 6",
+          titel: "Der Quantelschacht",
+          text: "Der quadratische Zentralkamin aus ca. 20 cm kurzen Buchenholzscheiten. Er wächst bis auf 2,5 m Höhe und wird beim Anzünden mit Füchsen, Holzkohle und Glut befüllt. Durch ihn zieht das Feuer von oben nach unten."
+        },
+        holz: {
+          badge: "Komponente 2 von 6",
+          titel: "Buchenholz-Schichten",
+          text: "100 cm lange Buchenholzscheite werden in einem Winkel von ca. 42° dicht an den Schacht gelehnt. Dicke Scheite kommen nach unten. Lücken werden mit Spänen gefüllt, damit kein Sauerstoffnest entsteht."
+        },
+        lueftung: {
+          badge: "Komponente 3 von 6",
+          titel: "Vier Lüftungsschächte & Grundplatte",
+          text: "Vier Kanäle am Meilerboden leiten Frischluft von außen direkt zum Quantelschacht. Beim Zünden erzeugen sie den nötigen Kamineffekt; später werden sie reguliert oder gedrosselt."
+        },
+        heu: {
+          badge: "Komponente 4 von 6",
+          titel: "Dünne Heuschicht",
+          text: "Eine dünne Zwischenlage aus Heu. Sie verhindert, dass die schwere Erde der Löscheschicht zwischen die Holzscheite rieselt. Sie darf nicht zu dick sein, da Heu sehr leicht entflammbar ist."
+        },
+        loesche: {
+          badge: "Komponente 5 von 6",
+          titel: "Löscheschicht (äußere Hülle)",
+          text: "Eine dicke, luftdichte Schicht aus feiner Erde früherer Meiler, durchsetzt mit Kohlenstoff. Sie riegelt den Meiler gegen die Außenluft ab und hält die immense Hitze im Inneren gefangen."
+        },
+        pfeifen: {
+          badge: "Komponente 6 von 6",
+          titel: "Pfeifen (Luftlöcher)",
+          text: "Mit der Quantelstange alle 3 Stunden gestochene Löcher. Sie steuern die Glutwanderung von oben nach unten. Ist das Holz an einer Stelle fertig, wird das Loch verschlossen und darunter ein neues gestochen."
+        }
+      },
+
+      // ------------------------------------------------------------------------
+      // 5. RAUCHFARBEN (TEIL C)
+      // ------------------------------------------------------------------------
+      rauchfarben: {
+        blue: {
+          titel: "Blauer, harzig riechender Rauch",
+          text: "Die Kohle ist an dieser Stelle weitgehend fertig verkohlt! Der Köhler weiß nun: Diese Pfeife kann verschlossen und 15 bis 20 cm weiter unten ein neues Luftloch gestochen werden.",
+          cssKlasse: "smoke-blue"
+        },
+        white: {
+          titel: "Weißer Rauch (Wasserdampf)",
+          text: "Das frische Buchenholz verliert gerade sein verbliebenes Restwasser. Der weiße Dampf zeigt dem Köhler an, dass die Trocknung und der Verkohlungsprozess im vollen Gange sind.",
+          cssKlasse: "smoke-white"
+        },
+        yellow: {
+          titel: "Gelblicher bis brauner Rauch",
+          text: "Beim intensiven Verschwelen des Holzes treten flüchtige Holzgase, Teerstoffe und Schwefel aus. Der Meiler arbeitet auf Hochtouren bei Temperaturen von mehreren hundert Grad.",
+          cssKlasse: "smoke-yellow"
+        },
+        black: {
+          titel: "Schwarzer Rauch",
+          text: "Alarmstufe Rot für den Köhler! Durch ein Leck oder eine unbemerkte Spalte ist zu viel Sauerstoff ins Innere gelangt. Das Holz hat Feuer gefangen und verbrennt zu Asche! Die Stelle muss sofort mit Löscherde abgedichtet werden.",
+          cssKlasse: "smoke-black"
+        }
+      }
+    };
+
+
+    /* ==========================================================================
+       INITIALISIERUNG DER WEBSITE
+       ========================================================================== */
+    // Scroll-Restaurierung des Browsers deaktivieren, damit die Seite immer oben startet
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // Seite immer ganz oben starten (bei #hero)
+      if (!window.location.hash || window.location.hash === "#hero") {
+        window.scrollTo(0, 0);
+      }
+
+      // 1. Zuerst alle dynamischen HTML-Elemente aufbauen
+      renderBegriffe();
+      renderTimeline();
+      initStepper();
+      initCrossSection();
+      initSmokeDetective();
+      initMeilerTabs();
+
+      // 2. Danach IntersectionObserver initialisieren (für weiche Scroll-Effekte)
+      initScrollEffects();
+
+      // 3. Header, Navigation & Fortschrittsbalken
+      initHeaderAndNavigation();
+
+      // 4. Funken-Canvas im Hero-Bereich
+      initEmberCanvas();
+
+      // 5. Ausstellungsmodus (#ausstellung) & Entwickler-Modal (#bilder)
+      handleUrlModes();
+      window.addEventListener("hashchange", handleUrlModes);
+    });
+
+
+    /* ==========================================================================
+       A. HEADER, SCROLL-PROGRESS & BURGER-MENÜ
+       ========================================================================== */
+    function initHeaderAndNavigation() {
+      const scrollProgressBar = document.getElementById("scroll-progress");
+      const scrollTopBtn = document.getElementById("scroll-top-btn");
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (scrollProgressBar) scrollProgressBar.style.width = scrollPercent + "%";
+
+        if (scrollTopBtn) {
+          if (scrollTop > 450) {
+            scrollTopBtn.classList.add("is-visible");
+          } else {
+            scrollTopBtn.classList.remove("is-visible");
+          }
+        }
+      }, { passive: true });
+
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function () {
+          const isOpen = navMenu.classList.toggle("is-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            navMenu.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      const sections = document.querySelectorAll("main section[id]");
+      window.addEventListener("scroll", function () {
+        let currentSectionId = "";
+        const scrollPos = window.scrollY + 130;
+
+        sections.forEach(function (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(function (link) {
+          link.classList.remove("active");
+          const href = link.getAttribute("href");
+          if (href === "#" + currentSectionId) {
+            link.classList.add("active");
+          }
+        });
+      }, { passive: true });
+    }
+
+
+    /* ==========================================================================
+       B. FUNKEN-EFFEKT IM HERO-BEREICH (CANVAS)
+       ========================================================================== */
+    function initEmberCanvas() {
+      const canvas = document.getElementById("ember-canvas");
+      if (!canvas) return;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+
+      const ctx = canvas.getContext("2d");
+      let width, height;
+      let particles = [];
+      const particleCount = 40;
+
+      function resize() {
+        const parent = canvas.parentElement;
+        width = canvas.width = parent.offsetWidth;
+        height = canvas.height = parent.offsetHeight;
+      }
+      resize();
+      window.addEventListener("resize", resize);
+
+      function createParticle() {
+        return {
+          x: Math.random() * width,
+          y: height + Math.random() * 40,
+          size: Math.random() * 2.5 + 1,
+          speedY: Math.random() * 1.3 + 0.6,
+          speedX: (Math.random() - 0.5) * 0.7,
+          opacity: Math.random() * 0.6 + 0.3,
+          decay: Math.random() * 0.003 + 0.002,
+          color: Math.random() > 0.4 ? "232, 87, 31" : "244, 162, 97"
+        };
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        const p = createParticle();
+        p.y = Math.random() * height;
+        particles.push(p);
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.y -= p.speedY;
+          p.x += p.speedX;
+          p.opacity -= p.decay;
+
+          if (p.opacity <= 0 || p.y < -10) {
+            particles[i] = createParticle();
+          } else {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = `rgba(${p.color}, 0.8)`;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+
+    /* ==========================================================================
+       C. SCROLL-REVEAL & COUNT-UP
+       ========================================================================== */
+    function initScrollEffects() {
+      const revealElements = document.querySelectorAll(".reveal-on-scroll");
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        revealElements.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        revealElements.forEach(function (el) {
+          el.classList.add("revealed");
+        });
+      }
+
+      const counters = document.querySelectorAll(".count-up");
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = parseInt(counter.getAttribute("data-target"), 10);
+              animateCounter(counter, target);
+              observer.unobserve(counter);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        counters.forEach(function (c) {
+          counterObserver.observe(c);
+        });
+      }
+    }
+
+    function animateCounter(element, target) {
+      let current = 0;
+      const duration = 1400;
+      const stepTime = 30;
+      const steps = duration / stepTime;
+      const increment = target / steps;
+
+      const timer = setInterval(function () {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, stepTime);
+    }
+
+
+    /* ==========================================================================
+       D. TEIL A: STEPPER (9 SCHRITTE DES MEILERAUFBAUS)
+       ========================================================================== */
+    function initStepper() {
+      const schritte = INHALTE.schritte;
+      let currentIndex = 0;
+
+      const pillsBar = document.getElementById("stepper-pills-bar");
+      const lineFill = document.getElementById("stepper-line-fill");
+      const imgEl = document.getElementById("stepper-img");
+      const imgWrapper = document.getElementById("stepper-image-wrapper");
+      const placeholderTag = document.getElementById("stepper-placeholder-tag");
+      const placeholderDesc = document.getElementById("stepper-placeholder-desc");
+      const placeholderFile = document.getElementById("stepper-placeholder-file");
+
+      const counterText = document.getElementById("stepper-counter-text");
+      const titleText = document.getElementById("stepper-title-text");
+      const descText = document.getElementById("stepper-desc-text");
+      const hintText = document.getElementById("stepper-hint-text");
+
+      const btnPrev = document.getElementById("stepper-btn-prev");
+      const btnNext = document.getElementById("stepper-btn-next");
+
+      pillsBar.innerHTML = "";
+      schritte.forEach(function (s, index) {
+        const pill = document.createElement("button");
+        pill.className = "step-pill" + (index === 0 ? " active" : "");
+        pill.textContent = s.nr;
+        pill.setAttribute("aria-label", "Schritt " + s.nr + ": " + s.titel);
+        pill.addEventListener("click", function () {
+          goToStep(index);
+        });
+        pillsBar.appendChild(pill);
+      });
+
+      function updateStepView(index) {
+        currentIndex = index;
+        const currentData = schritte[currentIndex];
+
+        imgWrapper.classList.remove("has-real-image");
+        imgEl.style.display = "block";
+        imgEl.src = currentData.bild;
+        imgEl.alt = currentData.titel;
+
+        placeholderTag.textContent = "Schritt " + currentData.nr;
+        placeholderDesc.textContent = currentData.bildDesc;
+        placeholderFile.textContent = currentData.bild;
+
+        counterText.textContent = "Schritt " + currentData.nr + " von " + schritte.length;
+        titleText.textContent = currentData.titel;
+        descText.textContent = currentData.text;
+        hintText.innerHTML = "<strong>Köhler-Fakt:</strong> " + currentData.tipp;
+
+        btnPrev.disabled = (currentIndex === 0);
+        btnPrev.style.opacity = (currentIndex === 0) ? "0.4" : "1";
+        btnNext.disabled = (currentIndex === schritte.length - 1);
+        btnNext.style.opacity = (currentIndex === schritte.length - 1) ? "0.4" : "1";
+
+        const pills = pillsBar.querySelectorAll(".step-pill");
+        pills.forEach(function (p, i) {
+          p.classList.remove("active", "completed");
+          if (i === currentIndex) {
+            p.classList.add("active");
+          } else if (i < currentIndex) {
+            p.classList.add("completed");
+          }
+        });
+
+        // Fortschrittslinie genau zwischen den Mittelpunkten berechnen
+        const progressPercent = (currentIndex / (schritte.length - 1)) * 100;
+        if (lineFill) lineFill.style.width = `calc(${progressPercent}% * 0.94)`;
+      }
+
+      function goToStep(index) {
+        if (index < 0 || index >= schritte.length) return;
+        updateStepView(index);
+      }
+
+      btnPrev.addEventListener("click", function () {
+        if (currentIndex > 0) goToStep(currentIndex - 1);
+      });
+      btnNext.addEventListener("click", function () {
+        if (currentIndex < schritte.length - 1) goToStep(currentIndex + 1);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        const meilerSection = document.getElementById("meileraufbau");
+        const rect = meilerSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (e.key === "ArrowLeft") {
+            if (currentIndex > 0) goToStep(currentIndex - 1);
+          } else if (e.key === "ArrowRight") {
+            if (currentIndex < schritte.length - 1) goToStep(currentIndex + 1);
+          }
+        }
+      });
+
+      const stepperContainer = document.querySelector(".stepper-container");
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      stepperContainer.addEventListener("touchstart", function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      stepperContainer.addEventListener("touchend", function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        const threshold = 45;
+        if (touchEndX < touchStartX - threshold) {
+          if (currentIndex < schritte.length - 1) goToStep(currentIndex + 1);
+        }
+        if (touchEndX > touchStartX + threshold) {
+          if (currentIndex > 0) goToStep(currentIndex - 1);
+        }
+      }, { passive: true });
+
+      updateStepView(0);
+    }
+
+
+    /* ==========================================================================
+       E. TEIL B: KLICKBARER SVG-QUERSCHNITT
+       ========================================================================== */
+    function initCrossSection() {
+      const hotspotsData = INHALTE.hotspots;
+      const hotspots = document.querySelectorAll(".hotspot");
+      const badgeText = document.getElementById("hotspot-badge-text");
+      const titleText = document.getElementById("hotspot-title-text");
+      const descText = document.getElementById("hotspot-desc-text");
+      const btnPills = document.querySelectorAll(".hotspot-btn-pill");
+
+      function selectHotspot(id) {
+        const data = hotspotsData[id];
+        if (!data) return;
+
+        badgeText.textContent = data.badge;
+        titleText.textContent = data.titel;
+        descText.textContent = data.text;
+
+        hotspots.forEach(function (h) {
+          if (h.getAttribute("data-id") === id) {
+            h.classList.add("active");
+          } else {
+            h.classList.remove("active");
+          }
+        });
+
+        btnPills.forEach(function (btn) {
+          if (btn.getAttribute("data-id") === id) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+      }
+
+      hotspots.forEach(function (h) {
+        const id = h.getAttribute("data-id");
+        h.addEventListener("click", function () { selectHotspot(id); });
+        h.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            selectHotspot(id);
+          }
+        });
+      });
+
+      btnPills.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          selectHotspot(btn.getAttribute("data-id"));
+        });
+      });
+    }
+
+
+    /* ==========================================================================
+       F. TEIL C: RAUCHFARBEN
+       ========================================================================== */
+    function initSmokeDetective() {
+      const smokeData = INHALTE.rauchfarben;
+      const smokePlume = document.getElementById("smoke-plume");
+      const smokeBtns = document.querySelectorAll(".smoke-card-btn");
+      const expTitle = document.getElementById("smoke-exp-title");
+      const expText = document.getElementById("smoke-exp-text");
+
+      function selectSmokeColor(colorKey) {
+        const data = smokeData[colorKey];
+        if (!data) return;
+
+        expTitle.textContent = data.titel;
+        expText.textContent = data.text;
+
+        smokeBtns.forEach(function (btn) {
+          if (btn.getAttribute("data-color") === colorKey) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+
+        if (smokePlume) {
+          smokePlume.className = "smoke-plume-wrapper " + data.cssKlasse;
+        }
+      }
+
+      smokeBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          selectSmokeColor(btn.getAttribute("data-color"));
+        });
+      });
+    }
+
+
+    /* ==========================================================================
+       G. KÖHLER-LEXIKON (DAUERHAFT AUSGEKLAPPT IM MODERNEN RASTER)
+       ========================================================================== */
+    function renderBegriffe() {
+      const container = document.getElementById("begriffe-container");
+      if (!container) return;
+
+      container.innerHTML = "";
+      const begriffe = INHALTE.begriffe;
+      begriffe.forEach(function (item) {
+        const itemEl = document.createElement("div");
+        itemEl.className = "begriff-card reveal-on-scroll";
+
+        itemEl.innerHTML = `
+          <h3 class="begriff-title">${item.begriff}</h3>
+          <p class="begriff-text">${item.erklaerung}</p>
+        `;
+
+        container.appendChild(itemEl);
+      });
+    }
+
+
+    /* ==========================================================================
+       H. ZEITSTRAHL (GESCHICHTE)
+       ========================================================================== */
+    function renderTimeline() {
+      const container = document.getElementById("timeline-container");
+      if (!container) return;
+
+      container.innerHTML = "";
+      const events = INHALTE.zeitleiste;
+      events.forEach(function (ev) {
+        const itemEl = document.createElement("div");
+        itemEl.className = "timeline-item reveal-on-scroll";
+
+        itemEl.innerHTML = `
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">${ev.jahr}</span>
+            <h3 class="timeline-title">${ev.titel}</h3>
+            <p class="timeline-text">${ev.text}</p>
+          </div>
+        `;
+
+        container.appendChild(itemEl);
+      });
+    }
+
+
+    /* ==========================================================================
+       I. TABS IM MEILERAUFBAU-BEREICH
+       ========================================================================== */
+    function initMeilerTabs() {
+      const tabBtns = document.querySelectorAll(".meiler-tab-btn");
+      const tabPanels = document.querySelectorAll(".meiler-tab-panel");
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const targetId = btn.getAttribute("data-target");
+
+          tabBtns.forEach(function (b) {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          tabPanels.forEach(function (p) {
+            p.classList.remove("active");
+          });
+
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add("active");
+          }
+        });
+      });
+    }
+
+
+    /* ==========================================================================
+       J. AUSSTELLUNGSMODUS (#ausstellung) & BILDSTATUS (#bilder)
+       ========================================================================== */
+    let ausstellungTimer = null;
+
+    function handleUrlModes() {
+      const hash = window.location.hash;
+
+      if (hash.includes("ausstellung")) {
+        document.body.classList.add("ausstellung-mode");
+        startInactivityTimer();
+      } else {
+        document.body.classList.remove("ausstellung-mode");
+        if (ausstellungTimer) clearTimeout(ausstellungTimer);
+      }
+
+      const devModal = document.getElementById("dev-modal");
+      if (hash.includes("bilder")) {
+        renderImageStatusModal();
+        if (devModal) devModal.classList.add("is-open");
+      } else {
+        if (devModal) devModal.classList.remove("is-open");
+      }
+    }
+
+    function startInactivityTimer() {
+      if (ausstellungTimer) clearTimeout(ausstellungTimer);
+
+      function resetTimer() {
+        if (!document.body.classList.contains("ausstellung-mode")) return;
+        if (ausstellungTimer) clearTimeout(ausstellungTimer);
+        ausstellungTimer = setTimeout(function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 90000);
+      }
+
+      ["pointerdown", "mousemove", "keydown", "touchstart", "scroll"].forEach(function (evt) {
+        window.addEventListener(evt, resetTimer, { passive: true });
+      });
+
+      resetTimer();
+    }
+
+    function renderImageStatusModal() {
+      const listEl = document.getElementById("dev-image-list");
+      if (!listEl) return;
+      listEl.innerHTML = "";
+
+      const bilder = [
+        { file: "images/hero-meiler.jpg", desc: "Titelbild: Fertiger Meiler mit Rauch" },
+        { file: "images/aufbau-01-grundriss.jpg", desc: "Schritt 1: Pink markierter Grundriss" },
+        { file: "images/aufbau-02-quantelschacht.jpg", desc: "Schritt 2: Quantelschacht in der Mitte" },
+        { file: "images/aufbau-03-lueftungsschacht.jpg", desc: "Schritt 3: 4 Lüftungsschächte & Grundplatte" },
+        { file: "images/aufbau-04-erste-schicht.jpg", desc: "Schritt 4: Erste Buchenholzschicht (42°)" },
+        { file: "images/aufbau-05-form.jpg", desc: "Schritt 5: Fast fertiger Meiler (Kegelform)" },
+        { file: "images/aufbau-06-abdeckung.jpg", desc: "Schritt 6: Heu- und dichte Löscheschicht" },
+        { file: "images/aufbau-07-anzuenden.jpg", desc: "Schritt 7: Köhler auf dem Meiler beim Anzünden" },
+        { file: "images/aufbau-08-beobachten.jpg", desc: "Schritt 8: Pfeifen & Rauchüberwachung" },
+        { file: "images/aufbau-09-ernte.jpg", desc: "Schritt 9: Kohleernte mit Atemschutz" },
+        { file: "images/unterricht-im-freien.jpg", desc: "Schulklasse beim Unterricht im Freien" },
+        { file: "images/verein-tradition.jpg", desc: "Vereinsleben Kittelsthaler Meiler e. V." }
+      ];
+
+      bilder.forEach(function (b) {
+        const item = document.createElement("li");
+        item.className = "dev-image-item";
+
+        const testImg = new Image();
+        testImg.src = b.file;
+
+        item.innerHTML = `
+          <div>
+            <strong>${b.desc}</strong><br>
+            <span style="font-family: monospace; color: var(--color-text-muted);">${b.file}</span>
+          </div>
+          <span class="dev-badge-status missing" id="badge-${b.file.replace(/[^a-zA-Z0-9]/g, '_')}">Platzhalter aktiv</span>
+        `;
+
+        testImg.onload = function () {
+          const badge = item.querySelector(".dev-badge-status");
+          if (badge) {
+            badge.className = "dev-badge-status loaded";
+            badge.textContent = "Foto vorhanden";
+          }
+        };
+
+        listEl.appendChild(item);
+      });
+
+      const modal = document.getElementById("dev-modal");
+      const closeBtn1 = document.getElementById("dev-modal-close");
+      const closeBtn2 = document.getElementById("dev-modal-close-btn");
+      [closeBtn1, closeBtn2].forEach(function (btn) {
+        if (btn) {
+          btn.onclick = function () {
+            modal.classList.remove("is-open");
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+          };
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
