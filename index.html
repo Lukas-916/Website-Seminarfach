@@ -1043,6 +1043,19 @@
       transform-origin: center;
     }
 
+    .hotspot.active .hotspot-pulse {
+      animation: none;
+      r: 24px;
+      fill: rgba(232, 87, 31, 0.45);
+      opacity: 1;
+      stroke: #ffffff;
+      stroke-width: 3;
+    }
+
+    .hotspot.active .hotspot-core {
+      r: 16px;
+    }
+
     @keyframes pulseAnimation {
       0% {
         r: 15;
@@ -1081,9 +1094,19 @@
 
     .hotspot.active .hotspot-core {
       fill: #ffffff;
-      stroke: var(--color-ember);
-      stroke-width: 3.5;
-      filter: drop-shadow(0 0 12px rgba(232, 87, 31, 0.9));
+      stroke: #b84619;
+      stroke-width: 4;
+      filter: drop-shadow(0 0 16px rgba(255, 117, 58, 1));
+    }
+
+    .hotspot.active text {
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .hotspot:focus-visible .hotspot-core {
+      stroke: #ffffff;
+      stroke-width: 4;
     }
 
     .hotspot-info-card {
@@ -1729,63 +1752,16 @@
       background: #090807;
       color: var(--color-text-sub);
       border-top: 1px solid var(--color-border-subtle);
-      padding: 4.5rem 0 2.5rem 0;
+      padding: 2rem 0;
       font-size: 0.95rem;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .footer-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-
-    .footer-text {
-      line-height: 1.65;
-      color: var(--color-text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .footer-links-list {
-      list-style: none;
+    .footer-bottom {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-link {
-      color: var(--color-amber);
-      transition: color var(--transition-fast);
-      display: inline-flex;
+      justify-content: center;
       align-items: center;
-      gap: 0.4rem;
-    }
-
-    .footer-link:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--color-border-subtle);
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      text-align: center;
       gap: 1rem;
       font-size: 0.85rem;
       color: var(--color-text-muted);
@@ -2003,7 +1979,6 @@
     :root[data-theme="light"] .concept-title,
     :root[data-theme="light"] .person-name,
     :root[data-theme="light"] .fest-title,
-    :root[data-theme="light"] .footer-title,
     :root[data-theme="light"] .smoke-card-title,
     :root[data-theme="light"] .dev-modal-close {
       color: var(--color-text-main);
@@ -2161,10 +2136,6 @@
       background: #eae2d8;
     }
 
-    :root[data-theme="light"] .footer-link:hover {
-      color: var(--color-text-main);
-    }
-
     :root[data-theme="light"] .dev-modal {
       background: rgba(41, 35, 30, 0.62);
     }
@@ -2274,11 +2245,6 @@
 
       .timeline-item {
         margin-bottom: 1.6rem;
-      }
-
-      .footer-bottom {
-        align-items: flex-start;
-        flex-direction: column;
       }
 
       .scroll-top-btn {
@@ -2394,6 +2360,18 @@
 
       .hotspot-info-card {
         padding: 1.2rem;
+      }
+
+      .hotspot.active .hotspot-pulse {
+        r: 34px;
+      }
+
+      .hotspot.active .hotspot-core {
+        r: 22px;
+      }
+
+      .hotspot.active text {
+        font-size: 30px;
       }
 
       .smoke-simulation-box {
@@ -3244,7 +3222,7 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="400" cy="180" r="11" fill="#e8571f" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="400" y="184" text-anchor="middle" font-size="11">1</text>
+                    <text x="400" y="180" text-anchor="middle" dominant-baseline="central" font-size="11">1</text>
                   </g>
 
                   <!-- Hotspot 2: Buchenholz-Schichten -->
@@ -3254,7 +3232,7 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="250" cy="335" r="11" fill="#e8571f" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="250" y="339" text-anchor="middle" font-size="11">2</text>
+                    <text x="250" y="335" text-anchor="middle" dominant-baseline="central" font-size="11">2</text>
                   </g>
 
                   <!-- Hotspot 3: Lüftungsschächte -->
@@ -3264,16 +3242,16 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="190" cy="439" r="11" fill="#e8571f" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="190" y="443" text-anchor="middle" font-size="11">3</text>
+                    <text x="190" y="439" text-anchor="middle" dominant-baseline="central" font-size="11">3</text>
                   </g>
 
                   <!-- Hotspot 4: Heuschicht -->
                   <g class="hotspot" id="hotspot-heu" data-id="heu" role="button" tabindex="0" aria-label="Heuschicht">
-                    <circle class="hotspot-pulse" cx="590" cy="185" r="16" fill="none" stroke="#e8571f"
+                    <circle class="hotspot-pulse" cx="246" cy="190" r="16" fill="none" stroke="#e8571f"
                       stroke-width="2" />
-                    <circle class="hotspot-core" cx="590" cy="185" r="11" fill="#e8571f" stroke="#ffffff"
+                    <circle class="hotspot-core" cx="246" cy="190" r="11" fill="#e8571f" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="590" y="189" text-anchor="middle" font-size="11">4</text>
+                    <text x="246" y="190" text-anchor="middle" dominant-baseline="central" font-size="11">4</text>
                   </g>
 
                   <!-- Hotspot 5: Löscheschicht -->
@@ -3283,7 +3261,7 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="680" cy="355" r="11" fill="#e8571f" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="680" y="359" text-anchor="middle" font-size="11">5</text>
+                    <text x="680" y="355" text-anchor="middle" dominant-baseline="central" font-size="11">5</text>
                   </g>
 
                   <!-- Hotspot 6 LINKS: Pfeife (Luftloch) -->
@@ -3293,7 +3271,7 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="145" cy="250" r="11" fill="#ff753a" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="145" y="254" text-anchor="middle" font-size="11">6</text>
+                    <text x="145" y="250" text-anchor="middle" dominant-baseline="central" font-size="11">6</text>
                   </g>
 
                   <!-- Hotspot 6 RECHTS: Pfeife (Luftloch – Voll interaktiv & klickbar!) -->
@@ -3303,7 +3281,7 @@
                       stroke-width="2" />
                     <circle class="hotspot-core" cx="655" cy="250" r="11" fill="#ff753a" stroke="#ffffff"
                       stroke-width="2" />
-                    <text x="655" y="254" text-anchor="middle" font-size="11">6</text>
+                    <text x="655" y="250" text-anchor="middle" dominant-baseline="central" font-size="11">6</text>
                   </g>
                 </svg>
               </div>
@@ -3572,32 +3550,6 @@
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4 class="footer-title">Kittelsthaler Meiler e. V.</h4>
-          <p class="footer-text">
-            Ortsteil Kittelsthal der Stadt Ruhla in Westthüringen.<br>
-            Bewahrung des traditionellen Köhlerhandwerks als immaterielles Kulturerbe in Deutschland.
-          </p>
-          <p style="font-size: 0.82rem; color: var(--color-text-muted);">
-            Diese One-Page-Website setzt keine Tracking-Cookies und lädt keinerlei externe Schriftarten nach (100%
-            offline-fähig).
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links-list">
-            <li><a href="#meileraufbau" class="footer-link">Meileraufbau (9 Schritte)</a></li>
-            <li><a href="#begriffe" class="footer-link">Köhler-Lexikon</a></li>
-            <li><a href="#geschichte" class="footer-link">Geschichte & Zeitstrahl</a></li>
-            <li><a href="#verein" class="footer-link">Der Verein</a></li>
-            <li><a href="#bilder" class="footer-link" id="dev-image-trigger">Entwickler: Bildstatus (#bilder)</a></li>
-            <li><a href="#ausstellung" class="footer-link">Ausstellungsmodus aktivieren (#ausstellung)</a></li>
-          </ul>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div>
           &copy; Seminarfachgruppe Köhlerhandwerk & Kittelsthaler Meiler e. V.
