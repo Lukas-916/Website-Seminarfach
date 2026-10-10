@@ -1955,7 +1955,506 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --color-bg-base: #f4efe8;
+      --color-bg-surface: #fbf8f3;
+      --color-bg-card: #ffffff;
+      --color-bg-card-hover: #fff7ed;
+      --color-bg-card-elevated: #ffffff;
+      --color-ember: #b84619;
+      --color-ember-glow: #c84d1b;
+      --color-ember-muted: rgba(184, 70, 25, 0.1);
+      --color-amber: #87531f;
+      --color-green-forest: #315b3e;
+      --color-green-light: #34784b;
+      --color-text-main: #29231e;
+      --color-text-sub: #574e46;
+      --color-text-muted: #766b61;
+      --color-border-subtle: rgba(58, 43, 30, 0.14);
+      --color-border-active: rgba(184, 70, 25, 0.42);
+      --shadow-sm: 0 2px 10px rgba(58, 43, 30, 0.08);
+      --shadow-md: 0 8px 25px rgba(58, 43, 30, 0.12);
+      --shadow-glow: 0 0 30px rgba(184, 70, 25, 0.14);
+    }
+
+    :root[data-theme="light"] body {
+      background-color: var(--color-bg-base);
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .site-header {
+      background: rgba(251, 248, 243, 0.94);
+    }
+
+    :root[data-theme="light"] .nav-menu-wrapper {
+      background: var(--color-bg-surface);
+    }
+
+    :root[data-theme="light"] .brand-title,
+    :root[data-theme="light"] .nav-link:hover,
+    :root[data-theme="light"] .nav-link.active,
+    :root[data-theme="light"] .section-title,
+    :root[data-theme="light"] .stat-label,
+    :root[data-theme="light"] .explanation-title,
+    :root[data-theme="light"] .step-title,
+    :root[data-theme="light"] .hotspot-info-title,
+    :root[data-theme="light"] .timeline-title,
+    :root[data-theme="light"] .begriff-title,
+    :root[data-theme="light"] .concept-title,
+    :root[data-theme="light"] .person-name,
+    :root[data-theme="light"] .fest-title,
+    :root[data-theme="light"] .footer-title,
+    :root[data-theme="light"] .smoke-card-title,
+    :root[data-theme="light"] .dev-modal-close {
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] [style*="color: #ffffff"] {
+      color: var(--color-text-main) !important;
+    }
+
+    :root[data-theme="light"] .hero-section {
+      background-color: #eee6db;
+    }
+
+    :root[data-theme="light"] .hero-bg-wrapper {
+      opacity: 0.2;
+    }
+
+    :root[data-theme="light"] .hero-overlay {
+      background:
+        linear-gradient(180deg, rgba(244, 239, 232, 0.76), rgba(244, 239, 232, 0.91)),
+        radial-gradient(circle at 50% 35%, rgba(244, 239, 232, 0.25), rgba(244, 239, 232, 0.8));
+    }
+
+    :root[data-theme="light"] .hero-title {
+      color: #29231e;
+      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.65);
+    }
+
+    :root[data-theme="light"] .hero-badge {
+      background: rgba(49, 91, 62, 0.1);
+      color: #315b3e;
+      border-color: rgba(49, 91, 62, 0.25);
+    }
+
+    :root[data-theme="light"] .hero-greeting-box {
+      background: rgba(255, 255, 255, 0.76);
+      border-color: rgba(184, 70, 25, 0.25);
+    }
+
+    :root[data-theme="light"] .image-placeholder-wrapper {
+      background: #eee6db;
+    }
+
+    :root[data-theme="light"] .placeholder-content {
+      background: linear-gradient(145deg, #f7f1e9 0%, #eee5da 100%);
+    }
+
+    :root[data-theme="light"] .placeholder-filename {
+      background: rgba(58, 43, 30, 0.07);
+      border-color: var(--color-border-subtle);
+    }
+
+    :root[data-theme="light"] .btn-secondary,
+    :root[data-theme="light"] .meiler-tab-btn,
+    :root[data-theme="light"] .hotspot-btn-pill,
+    :root[data-theme="light"] .smoke-card-btn,
+    :root[data-theme="light"] .dev-image-item {
+      background: rgba(58, 43, 30, 0.04);
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .btn-secondary:hover,
+    :root[data-theme="light"] .meiler-tab-btn:hover,
+    :root[data-theme="light"] .smoke-card-btn:hover {
+      background: rgba(58, 43, 30, 0.08);
+      border-color: rgba(58, 43, 30, 0.22);
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .meiler-tab-btn.active,
+    :root[data-theme="light"] .hotspot-btn-pill:hover,
+    :root[data-theme="light"] .hotspot-btn-pill.active,
+    :root[data-theme="light"] .btn-primary {
+      color: #ffffff;
+    }
+
+    :root[data-theme="light"] .meiler-tab-btn.active,
+    :root[data-theme="light"] .meiler-tab-btn.active:hover {
+      background: var(--color-ember);
+      border-color: var(--color-ember);
+    }
+
+    :root[data-theme="light"] .hotspot-btn-pill:hover,
+    :root[data-theme="light"] .hotspot-btn-pill.active {
+      background: var(--color-ember);
+      border-color: var(--color-ember);
+      color: #ffffff;
+    }
+
+    :root[data-theme="light"] .stepper-line-track {
+      background: rgba(58, 43, 30, 0.18);
+    }
+
+    :root[data-theme="light"] .step-pill {
+      background: var(--color-bg-card);
+      border-color: rgba(58, 43, 30, 0.2);
+      color: var(--color-text-sub);
+    }
+
+    :root[data-theme="light"] .step-pill:hover {
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .step-pill.completed {
+      background: #fff0e4;
+      color: var(--color-ember);
+    }
+
+    :root[data-theme="light"] .step-pill.active {
+      background: var(--color-ember);
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    :root[data-theme="light"] .step-hint-box {
+      color: var(--color-text-sub);
+      background: rgba(184, 70, 25, 0.07);
+    }
+
+    :root[data-theme="light"] .svg-wrapper {
+      background: radial-gradient(circle at 50% 65%, #f4ece2 0%, #e9dfd3 100%);
+      box-shadow: inset 0 0 35px rgba(58, 43, 30, 0.1);
+    }
+
+    :root[data-theme="light"] .hotspot-info-card {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    :root[data-theme="light"] .explanation-box {
+      background: linear-gradient(135deg, #fffdf9 0%, #f3ece3 100%);
+    }
+
+    :root[data-theme="light"] .smoke-explanation-box {
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    :root[data-theme="light"] .timeline-title {
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .milestone-year,
+    :root[data-theme="light"] .concept-tag {
+      color: #34784b;
+    }
+
+    :root[data-theme="light"] .person-card {
+      background: #f6f1ea;
+    }
+
+    :root[data-theme="light"] .fest-invite-card {
+      background: linear-gradient(135deg, #fffaf3 0%, #f3e9dc 100%);
+    }
+
+    :root[data-theme="light"] .site-footer {
+      background: #eae2d8;
+    }
+
+    :root[data-theme="light"] .footer-link:hover {
+      color: var(--color-text-main);
+    }
+
+    :root[data-theme="light"] .dev-modal {
+      background: rgba(41, 35, 30, 0.62);
+    }
+
+    :root[data-theme="light"] .dev-modal-content {
+      background: #fbf8f3;
+    }
+
+    :root[data-theme="light"] .dev-badge-status.missing {
+      color: #a23b15;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-full);
+      background: var(--color-bg-card);
+      color: var(--color-text-main);
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      background: var(--color-bg-card-hover);
+      border-color: var(--color-border-active);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .theme-icon-moon {
+      display: none;
+    }
+
+    :root[data-theme="light"] .theme-icon-sun {
+      display: none;
+    }
+
+    :root[data-theme="light"] .theme-icon-moon {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nav-menu-wrapper {
+        max-height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-right: 1.15rem;
+        padding-left: 1.15rem;
+      }
+
+      .section {
+        padding: clamp(3.5rem, 10vw, 5rem) 0;
+      }
+
+      .nav-container {
+        gap: 0.4rem;
+      }
+
+      .theme-toggle {
+        margin-left: auto;
+      }
+
+      .main-nav {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .main-nav .theme-toggle {
+        margin: 0.6rem 0 0;
+        min-height: 48px;
+      }
+
+      .nav-menu-wrapper {
+        overscroll-behavior: contain;
+      }
+
+      .stepper-body {
+        min-height: 0;
+      }
+
+      .timeline-container {
+        padding: 1.5rem 0;
+      }
+
+      .timeline-item {
+        margin-bottom: 1.6rem;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .scroll-top-btn {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --nav-height: 66px;
+      }
+
+      .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+
+      .brand-title {
+        font-size: 1.02rem;
+      }
+
+      .brand-sub {
+        font-size: 0.61rem;
+        letter-spacing: 0.08em;
+      }
+
+      .hero-section {
+        min-height: 100svh;
+        padding-top: calc(var(--nav-height) + 2rem);
+        padding-bottom: 3.5rem;
+      }
+
+      .hero-greeting-box {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .greeting-text {
+        font-size: 1.25rem;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .meiler-tab-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+      }
+
+      .meiler-tab-btn {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .stepper-container,
+      .cross-section-container,
+      .smoke-detective-container {
+        padding: 1.1rem;
+        border-radius: var(--radius-md);
+      }
+
+      .stepper-progress-wrapper {
+        margin: 0 -0.2rem 1.5rem;
+      }
+
+      .stepper-pills-bar {
+        justify-content: flex-start;
+        gap: 0.7rem;
+        overflow-x: auto;
+        padding: 0.65rem 0.45rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+      }
+
+      .step-pill {
+        width: 34px;
+        height: 34px;
+        scroll-snap-align: center;
+      }
+
+      .stepper-line-track,
+      .stepper-line-fill {
+        display: none;
+      }
+
+      .stepper-nav-controls {
+        align-items: stretch;
+      }
+
+      .stepper-nav-controls .btn {
+        flex: 1 1 42%;
+        padding-right: 0.8rem;
+        padding-left: 0.8rem;
+      }
+
+      .cross-section-layout {
+        gap: 1.2rem;
+      }
+
+      .svg-wrapper {
+        padding: 0.45rem;
+      }
+
+      .hotspot-info-card {
+        padding: 1.2rem;
+      }
+
+      .smoke-simulation-box {
+        height: 320px;
+      }
+
+      .smoke-options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-container::before {
+        left: 16px;
+      }
+
+      .timeline-item {
+        padding-left: 42px;
+      }
+
+      .timeline-item .timeline-dot {
+        left: 9px !important;
+      }
+
+      .timeline-card {
+        padding: 1.15rem;
+      }
+
+      .verein-milestones,
+      .verein-features-grid {
+        gap: 0.9rem;
+      }
+
+      .dev-modal {
+        padding: 0.75rem;
+      }
+
+      .dev-modal-content {
+        padding: 1.4rem 1rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      body {
+        min-width: 0;
+      }
+
+      .hero-title {
+        font-size: clamp(1.9rem, 9vw, 2rem);
+      }
+
+      .section-title {
+        font-size: clamp(1.7rem, 7.5vw, 1.9rem);
+      }
+    }
   </style>
+  <script>
+    if (localStorage.getItem("kittelsthaler-theme") === "light") {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
 </head>
 
 <body>
@@ -2003,6 +2502,16 @@
           </ul>
         </nav>
       </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Lightmode aktivieren" title="Lightmode aktivieren"
+        aria-pressed="false">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -3434,6 +3943,7 @@
 
       // 3. Header, Navigation & Fortschrittsbalken
       initHeaderAndNavigation();
+      initThemeToggle();
 
       // 4. Funken-Canvas im Hero-Bereich
       initEmberCanvas();
@@ -3510,6 +4020,27 @@
           }
         });
       }, { passive: true });
+    }
+
+    function initThemeToggle() {
+      const themeToggle = document.getElementById("theme-toggle");
+      if (!themeToggle) return;
+
+      function updateThemeControls() {
+        const isLight = document.documentElement.dataset.theme === "light";
+        const label = isLight ? "Darkmode aktivieren" : "Lightmode aktivieren";
+        themeToggle.setAttribute("aria-label", label);
+        themeToggle.setAttribute("title", label);
+        themeToggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+      }
+
+      updateThemeControls();
+      themeToggle.addEventListener("click", function () {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("kittelsthaler-theme", nextTheme);
+        updateThemeControls();
+      });
     }
 
 
