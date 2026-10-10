@@ -12,25 +12,25 @@
   <!-- ==========================================================================
        BILDERLISTE (HINWEISE FÜR DEN VEREIN & DIE BEARBEITUNG)
        ==========================================================================
-       Alle benötigten Fotos liegen im Unterordner "images/" neben dieser index.html.
+       Alle benötigten Fotos liegen direkt neben dieser index.html.
        Solange kein echtes Foto vorhanden ist, zeigt die Website automatisch einen
        modern gestalteten Platzhalter-Kasten mit Kamera-Symbol und Funktionsbeschreibung an.
-       Sobald eine Datei mit dem passenden Namen im Ordner "images/" abgelegt wird,
+       Sobald eine Datei mit dem passenden Namen neben der index.html abgelegt wird,
        erscheint automatisch das echte Foto – ganz ohne Änderung am Quellcode!
 
        Benötigte Bilddateien:
-       1.  images/hero-meiler.jpg               -> Foto: Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch
-       2.  images/aufbau-01-grundriss.jpg       -> Foto: Der mit pinker Sprühfarbe markierte Grundriss auf der Kohlstelle
-       3.  images/aufbau-02-quantelschacht.jpg   -> Foto: Der Quantelschacht in der Mitte des Grundrisses
-       4.  images/aufbau-03-lueftungsschacht.jpg -> Foto: Grundplatte mit den vier Lüftungsschächten
-       5.  images/aufbau-04-erste-schicht.jpg   -> Foto: Köhler beim dichten Aufschichten der ersten Schicht (ca. 42° Neigung)
-       6.  images/aufbau-05-form.jpg            -> Foto: Fast fertig aufgeschichteter Meiler in Kegelstumpfform
-       7.  images/aufbau-06-abdeckung.jpg       -> Foto: Meiler mit dünner Heuschicht und dichter Löscheschicht
-       8.  images/aufbau-07-anzuenden.jpg       -> Foto: Der Köhler auf dem Meiler beim Befüllen des Quantelschachtes mit Glut
-       9.  images/aufbau-08-beobachten.jpg      -> Foto: Pfeifen (Luftlöcher) und Rauchkontrolle rund um den Meiler
-       10. images/aufbau-09-ernte.jpg           -> Foto: Köhler bei der Kohleernte mit Atemschutz und Löschwasser
-       11. images/unterricht-im-freien.jpg      -> Foto: Schulklasse beim Lernen und Bau eines Mini-Meilers im Freien
-       12. images/verein-tradition.jpg          -> Foto: Die Köhlergemeinschaft des Kittelsthaler Meiler e. V. am Meilerplatz
+       1.  hero-meiler.jpg               -> Foto: Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch
+       2.  aufbau-01-grundriss.jpg       -> Foto: Der mit pinker Sprühfarbe markierte Grundriss auf der Kohlstelle
+       3.  aufbau-02-quantelschacht.jpg   -> Foto: Der Quantelschacht in der Mitte des Grundrisses
+       4.  aufbau-03-lueftungsschacht.jpg -> Foto: Grundplatte mit den vier Lüftungsschächten
+       5.  aufbau-04-erste-schicht.jpg   -> Foto: Köhler beim dichten Aufschichten der ersten Schicht (ca. 42° Neigung)
+       6.  aufbau-05-form.jpg            -> Foto: Fast fertig aufgeschichteter Meiler in Kegelstumpfform
+       7.  aufbau-06-abdeckung.jpg       -> Foto: Meiler mit dünner Heuschicht und dichter Löscheschicht
+       8.  aufbau-07-anzuenden.jpg       -> Foto: Der Köhler auf dem Meiler beim Befüllen des Quantelschachtes mit Glut
+       9.  aufbau-08-beobachten.jpg      -> Foto: Pfeifen (Luftlöcher) und Rauchkontrolle rund um den Meiler
+       10. aufbau-09-ernte.jpg           -> Foto: Köhler bei der Kohleernte mit Atemschutz und Löschwasser
+       11. unterricht-im-freien.jpg      -> Foto: Schulklasse beim Lernen und Bau eines Mini-Meilers im Freien
+       12. verein-tradition.jpg          -> Foto: Die Köhlergemeinschaft des Kittelsthaler Meiler e. V. am Meilerplatz
 
        Tipp: Hänge "#bilder" an die Webadresse an, um den Entwickler-Bildstatus aufzurufen!
        ========================================================================== -->
@@ -2524,7 +2524,7 @@
 
       <div class="hero-bg-wrapper">
         <div class="image-placeholder-wrapper ratio-16-9" data-img="hero">
-          <img src="images/hero-meiler.jpg" alt="Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch"
+          <img src="hero-meiler.jpg" alt="Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch"
             loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
             onerror="this.style.display='none';">
           <div class="placeholder-content">
@@ -2534,7 +2534,7 @@
             </svg>
             <span class="placeholder-tag">Titelbild Meilerplatz</span>
             <p class="placeholder-text">Foto: Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch</p>
-            <span class="placeholder-filename">images/hero-meiler.jpg</span>
+            <span class="placeholder-filename">hero-meiler.jpg</span>
           </div>
         </div>
       </div>
@@ -2746,7 +2746,7 @@
             <div class="stepper-body" id="stepper-body-area">
               <div class="stepper-image-col">
                 <div class="image-placeholder-wrapper ratio-4-3" id="stepper-image-wrapper">
-                  <img id="stepper-img" src="images/aufbau-01-grundriss.jpg" alt="Grundriss abstecken" loading="lazy"
+                  <img id="stepper-img" src="aufbau-01-grundriss.jpg" alt="Grundriss abstecken" loading="lazy"
                     onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
                     onerror="this.style.display='none'; this.closest('.image-placeholder-wrapper').classList.remove('has-real-image');">
                   <div class="placeholder-content" id="stepper-placeholder-content">
@@ -2759,7 +2759,7 @@
                     <p class="placeholder-text" id="stepper-placeholder-desc">Foto: Der mit pinker Sprühfarbe markierte
                       Grundriss auf der Kohlstelle</p>
                     <span class="placeholder-filename"
-                      id="stepper-placeholder-file">images/aufbau-01-grundriss.jpg</span>
+                      id="stepper-placeholder-file">aufbau-01-grundriss.jpg</span>
                   </div>
                 </div>
               </div>
@@ -3486,7 +3486,7 @@
 
         <div class="verein-features-grid">
           <div class="image-placeholder-wrapper ratio-4-3 reveal-on-scroll">
-            <img src="images/unterricht-im-freien.jpg" alt="Schulklasse beim Unterricht im Freien am Meiler"
+            <img src="unterricht-im-freien.jpg" alt="Schulklasse beim Unterricht im Freien am Meiler"
               loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
               onerror="this.style.display='none';">
             <div class="placeholder-content">
@@ -3496,7 +3496,7 @@
               </svg>
               <span class="placeholder-tag">Pädagogik vor Ort</span>
               <p class="placeholder-text">Foto: Schulklasse beim Lernen und Bau eines Mini-Meilers im Freien</p>
-              <span class="placeholder-filename">images/unterricht-im-freien.jpg</span>
+              <span class="placeholder-filename">unterricht-im-freien.jpg</span>
             </div>
           </div>
 
@@ -3638,8 +3638,8 @@
         Bildstatus & Anleitung für den Verein
       </h3>
       <p style="font-size: 0.95rem; color: var(--color-text-sub); margin-bottom: 1rem;">
-        Diese Liste zeigt alle 12 Bilder der Website. Lege einfach deine Fotos mit den angegebenen Dateinamen im Ordner
-        <code>images/</code> neben der <code>index.html</code> ab. Sobald eine Datei existiert, wird der Platzhalter
+        Diese Liste zeigt alle 12 Bilder der Website. Lege einfach deine Fotos mit den angegebenen Dateinamen direkt
+        neben der <code>index.html</code> ab. Sobald eine Datei existiert, wird der Platzhalter
         automatisch durch das Foto ersetzt.
       </p>
 
@@ -3676,7 +3676,7 @@
         {
           nr: 1,
           titel: "Grundriss abstecken",
-          bild: "images/aufbau-01-grundriss.jpg",
+          bild: "aufbau-01-grundriss.jpg",
           bildDesc: "Foto: Der mit pinker Sprühfarbe markierte Grundriss auf der Kohlstelle",
           text: "Auf der Kohlstelle (dem Meilerplatz) werden der Grundriss mit 6 m Durchmesser sowie die Positionen der Lüftungsschächte und des Quantelschachtes mit pinker Sprühfarbe markiert. So behalten die Köhler beim Aufbau die runde Form bei.",
           tipp: "Ein exakter Kreis ist entscheidend, damit die Hitze später von der Mitte gleichmäßig in alle Himmelsrichtungen wandert."
@@ -3684,7 +3684,7 @@
         {
           nr: 2,
           titel: "Holz sortieren und Quantelschacht bauen",
-          bild: "images/aufbau-02-quantelschacht.jpg",
+          bild: "aufbau-02-quantelschacht.jpg",
           bildDesc: "Foto: Der Quantelschacht in der Mitte des Grundrisses",
           text: "Das Buchenholz wird in Scheite von 100 cm, 50 cm und 20 cm sortiert. In der Mitte entsteht der Quantelschacht aus etwa 20 cm langen Scheiten, die quadratisch gestapelt werden. Zuerst wird er nur 100 cm hoch gebaut, damit die erste Holzschicht von ihm aus nach außen gestapelt werden kann. Später wächst er bis auf 2,5 m.",
           tipp: "Der Quantelschacht ist der zentrale Kamin des Meilers, über den später die Glut eingebracht wird."
@@ -3692,7 +3692,7 @@
         {
           nr: 3,
           titel: "Lüftungsschächte und Grundplatte",
-          bild: "images/aufbau-03-lueftungsschacht.jpg",
+          bild: "aufbau-03-lueftungsschacht.jpg",
           bildDesc: "Foto: Grundplatte mit den vier Lüftungsschächten",
           text: "Vom Quantelschacht aus verlaufen vier Lüftungsschächte bis zum äußeren Rand. Der restliche Teil der Grundplatte wird mit längeren Scheiten strahlenförmig (radial) von der Mitte nach außen gefüllt.",
           tipp: "Die vier Schächte garantieren die Frischluftzufuhr am Boden und lassen sich während des Brandes gezielt regulieren."
@@ -3700,7 +3700,7 @@
         {
           nr: 4,
           titel: "Erste Holzschicht aufstellen",
-          bild: "images/aufbau-04-erste-schicht.jpg",
+          bild: "aufbau-04-erste-schicht.jpg",
           bildDesc: "Foto: Köhler beim dichten Aufschichten der ersten Schicht (ca. 42° Neigung)",
           text: "Die 100 cm langen Scheite werden senkrecht, in einem Winkel von etwa 42°, an den Quantelschacht gelehnt. Je aufrechter das Holz steht, desto ruhiger verläuft die Verkohlung und desto fester wird die Kohle. Das Holz wird möglichst dicht gestapelt, Lücken werden mit kleinen Hölzern und Spänen gefüllt, damit es nicht unkontrolliert verbrennt. Dicke, schwere Scheite kommen nach unten, weil sie länger zum Verkohlen brauchen.",
           tipp: "Keine Lücken lassen! Luftlöcher im Holzstapel würden zu offenem Feuer führen – das Holz würde verbrennen statt verkohlen."
@@ -3708,7 +3708,7 @@
         {
           nr: 5,
           titel: "Weitere Schichten und Form",
-          bild: "images/aufbau-05-form.jpg",
+          bild: "aufbau-05-form.jpg",
           bildDesc: "Foto: Fast fertig aufgeschichteter Meiler in Kegelstumpfform",
           text: "Auf die erste Schicht kommt eine zweite. Der Winkel der Scheite wird immer flacher, damit der Meiler nach außen abflacht und die spätere Abdeckung hält. Am Ende ähnelt der Meiler einem abgeflachten Kegel. Die Oberfläche ist so beschaffen, dass der Köhler später sicher auf dem Meiler stehen und den Quantelschacht erreichen kann.",
           tipp: "Die Kegelform sorgt dafür, dass Regenwasser ablaufen kann und die schwere Erdabdeckung nicht abrutscht."
@@ -3716,7 +3716,7 @@
         {
           nr: 6,
           titel: "Abdecken mit Heu und Löscheschicht",
-          bild: "images/aufbau-06-abdeckung.jpg",
+          bild: "aufbau-06-abdeckung.jpg",
           bildDesc: "Foto: Meiler mit dünner Heuschicht und dichter Löscheschicht",
           text: "Zuerst kommt eine dünne Heuschicht darauf, die verhindert, dass die Abdeckung hineinrieselt, und die Löscheschicht hält. Sie darf nicht zu dick sein, weil Heu leicht entzündlich ist. Darauf kommt die dickere Löscheschicht: Erde vom vorigen Meiler, die vom früheren Verkohlungsprozess mit Kohlenstoff durchsetzt ist. Sie schließt den Meiler luftdicht ab.",
           tipp: "Alte Meilererde („Lösche“) ist besonders wertvoll: Durch ihren Kohlenstoffgehalt isoliert sie die Hitze perfekt."
@@ -3724,7 +3724,7 @@
         {
           nr: 7,
           titel: "Anzünden („Gut Brand!“)",
-          bild: "images/aufbau-07-anzuenden.jpg",
+          bild: "aufbau-07-anzuenden.jpg",
           bildDesc: "Foto: Der Köhler auf dem Meiler beim Befüllen des Quantelschachtes mit Glut",
           text: "Über eine angelehnte Leiter steigt der Köhler auf den Meiler und füllt den Quantelschacht mit „Füchsen“ (nicht vollständig durchgezogenen Holzkohleresten des letzten Meilers), Holzkohle und Glut aus einer Feuerschale. Alle vier Lüftungsschächte sind offen. Durch den Schloteffekt wird Luft hineingezogen, der Meiler zündet von innen heraus und die Verschwelung beginnt. Köhlergruß: „Gut Brand!“",
           tipp: "Der Schloteffekt saugt den Sauerstoff kräftig durch die vier Bodenschächte nach oben und entfacht den Brandherd."
@@ -3732,7 +3732,7 @@
         {
           nr: 8,
           titel: "Beobachten und regulieren",
-          bild: "images/aufbau-08-beobachten.jpg",
+          bild: "aufbau-08-beobachten.jpg",
           bildDesc: "Foto: Pfeifen (Luftlöcher) und Rauchkontrolle rund um den Meiler",
           text: "Die schwierigste und wichtigste Phase. Der Meiler wird Tag und Nacht überwacht. Der Köhler hat drei Mittel: die Luftschächte (Luftzufuhr steuern), das Verdichten der Deckschicht (weniger Sauerstoff, Hitze dämpfen) und das Auffüllen eingesunkener Stellen mit frischem Holz, aber nie an der Windseite. Das wichtigste Mittel sind die „Pfeifen“: kleine Luftlöcher, die mit der Quantelstange von oben in die Deckschicht gestochen werden, etwa alle drei Stunden nachgestochen und geprüft. Lässt sich die Stange an einer Stelle bis ins Innere schieben, ist die Kohle dort fertig, die Pfeife wird verschlossen und etwa 15 bis 20 cm weiter unten wird eine neue gestochen. So arbeitet sich der Köhler von oben nach unten durch den Meiler. Mit der „Bratschn“ oder Kohlenschaufel wird auf den Meiler geschlagen, um Hohlräume zu schließen.",
           tipp: "Das Klopfen mit der Bratschn verdichtet das absackende Holz und verhindert lebensgefährliche Hohlräume im Meiler."
@@ -3740,7 +3740,7 @@
         {
           nr: 9,
           titel: "Die Ernte",
-          bild: "images/aufbau-09-ernte.jpg",
+          bild: "aufbau-09-ernte.jpg",
           bildDesc: "Foto: Köhler bei der Kohleernte mit Atemschutz und Löschwasser",
           text: "Der anstrengendste Arbeitsschritt am Ende der Woche. Beim Öffnen enthält die Luft im Meiler viel Kohlenstoffdioxid, deshalb ist Atemschutz nötig. Der Meiler wird nur schrittweise geöffnet, damit nicht zu viel Sauerstoff an die Kohle kommt und sie sich neu entzündet. Die Kohle wird geerntet, von den Füchsen getrennt, mit Wasser abgelöscht und zum Trocknen auf eine Plane gelegt. Danach wird sie gewogen und in Säcke verpackt. An der Ausbeute erkennt der Köhler, wie gut der Meiler gelungen ist. Gute Kohle ist groß, fest, schwer, schwarz, glänzt auf dem Bruch, färbt nicht ab und klingt beim Anschlagen.",
           tipp: "Qualitäts-Test: Wenn man zwei Stücke Holzkohle aneinanderschlägt, müssen sie hell und metallisch klingen!"
@@ -4520,18 +4520,18 @@
       listEl.innerHTML = "";
 
       const bilder = [
-        { file: "images/hero-meiler.jpg", desc: "Titelbild: Fertiger Meiler mit Rauch" },
-        { file: "images/aufbau-01-grundriss.jpg", desc: "Schritt 1: Pink markierter Grundriss" },
-        { file: "images/aufbau-02-quantelschacht.jpg", desc: "Schritt 2: Quantelschacht in der Mitte" },
-        { file: "images/aufbau-03-lueftungsschacht.jpg", desc: "Schritt 3: 4 Lüftungsschächte & Grundplatte" },
-        { file: "images/aufbau-04-erste-schicht.jpg", desc: "Schritt 4: Erste Buchenholzschicht (42°)" },
-        { file: "images/aufbau-05-form.jpg", desc: "Schritt 5: Fast fertiger Meiler (Kegelform)" },
-        { file: "images/aufbau-06-abdeckung.jpg", desc: "Schritt 6: Heu- und dichte Löscheschicht" },
-        { file: "images/aufbau-07-anzuenden.jpg", desc: "Schritt 7: Köhler auf dem Meiler beim Anzünden" },
-        { file: "images/aufbau-08-beobachten.jpg", desc: "Schritt 8: Pfeifen & Rauchüberwachung" },
-        { file: "images/aufbau-09-ernte.jpg", desc: "Schritt 9: Kohleernte mit Atemschutz" },
-        { file: "images/unterricht-im-freien.jpg", desc: "Schulklasse beim Unterricht im Freien" },
-        { file: "images/verein-tradition.jpg", desc: "Vereinsleben Kittelsthaler Meiler e. V." }
+        { file: "hero-meiler.jpg", desc: "Titelbild: Fertiger Meiler mit Rauch" },
+        { file: "aufbau-01-grundriss.jpg", desc: "Schritt 1: Pink markierter Grundriss" },
+        { file: "aufbau-02-quantelschacht.jpg", desc: "Schritt 2: Quantelschacht in der Mitte" },
+        { file: "aufbau-03-lueftungsschacht.jpg", desc: "Schritt 3: 4 Lüftungsschächte & Grundplatte" },
+        { file: "aufbau-04-erste-schicht.jpg", desc: "Schritt 4: Erste Buchenholzschicht (42°)" },
+        { file: "aufbau-05-form.jpg", desc: "Schritt 5: Fast fertiger Meiler (Kegelform)" },
+        { file: "aufbau-06-abdeckung.jpg", desc: "Schritt 6: Heu- und dichte Löscheschicht" },
+        { file: "aufbau-07-anzuenden.jpg", desc: "Schritt 7: Köhler auf dem Meiler beim Anzünden" },
+        { file: "aufbau-08-beobachten.jpg", desc: "Schritt 8: Pfeifen & Rauchüberwachung" },
+        { file: "aufbau-09-ernte.jpg", desc: "Schritt 9: Kohleernte mit Atemschutz" },
+        { file: "unterricht-im-freien.jpg", desc: "Schulklasse beim Unterricht im Freien" },
+        { file: "verein-tradition.jpg", desc: "Vereinsleben Kittelsthaler Meiler e. V." }
       ];
 
       bilder.forEach(function (b) {
