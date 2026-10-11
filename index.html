@@ -8,6 +8,17 @@
     content="Traditionelles Köhlerhandwerk in Westthüringen – Das immaterielle Kulturerbe am Beispiel des Kittelsthaler Meilers. Interaktive Erkundung von Meileraufbau, Geschichte und Tradition.">
   <meta name="author" content="Seminarfachgruppe Köhlerhandwerk">
   <title>Das Köhlerhandwerk – Der Kittelsthaler Meiler | Immaterielles Kulturerbe</title>
+  <link rel="preload" as="image" href="hero-meiler.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="aufbau-01-grundriss.jpg">
+  <link rel="preload" as="image" href="aufbau-02-quantelschacht.jpg">
+  <link rel="preload" as="image" href="aufbau-03-lueftungsschacht.jpg">
+  <link rel="preload" as="image" href="aufbau-04-erste-schicht.jpg">
+  <link rel="preload" as="image" href="aufbau-05-form.jpg">
+  <link rel="preload" as="image" href="aufbau-06-abdeckung.jpg">
+  <link rel="preload" as="image" href="aufbau-07-anzuenden.jpg">
+  <link rel="preload" as="image" href="aufbau-08-beobachten.jpg">
+  <link rel="preload" as="image" href="aufbau-09-ernte.jpg">
+  <link rel="preload" as="image" href="unterricht-im-freien.jpg">
 
   <!-- ==========================================================================
        BILDERLISTE (HINWEISE FÜR DEN VEREIN & DIE BEARBEITUNG)
@@ -1993,13 +2004,13 @@
     }
 
     :root[data-theme="light"] .hero-bg-wrapper {
-      opacity: 0.2;
+      opacity: 0.62;
     }
 
     :root[data-theme="light"] .hero-overlay {
       background:
-        linear-gradient(180deg, rgba(244, 239, 232, 0.76), rgba(244, 239, 232, 0.91)),
-        radial-gradient(circle at 50% 35%, rgba(244, 239, 232, 0.25), rgba(244, 239, 232, 0.8));
+        linear-gradient(180deg, rgba(244, 239, 232, 0.3), rgba(244, 239, 232, 0.52)),
+        radial-gradient(circle at 50% 35%, rgba(244, 239, 232, 0.12), rgba(244, 239, 232, 0.44));
     }
 
     :root[data-theme="light"] .hero-title {
@@ -2501,7 +2512,7 @@
       <div class="hero-bg-wrapper">
         <div class="image-placeholder-wrapper ratio-16-9" data-img="hero">
           <img src="hero-meiler.jpg" alt="Der fertige Kittelsthaler Meiler mit aufsteigendem Rauch"
-            loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
+            loading="eager" fetchpriority="high" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
             onerror="this.style.display='none';">
           <div class="placeholder-content">
             <svg class="placeholder-icon" viewBox="0 0 24 24">
@@ -2722,7 +2733,7 @@
             <div class="stepper-body" id="stepper-body-area">
               <div class="stepper-image-col">
                 <div class="image-placeholder-wrapper ratio-4-3" id="stepper-image-wrapper">
-                  <img id="stepper-img" src="aufbau-01-grundriss.jpg" alt="Grundriss abstecken" loading="lazy"
+                  <img id="stepper-img" src="aufbau-01-grundriss.jpg" alt="Grundriss abstecken" loading="eager"
                     onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
                     onerror="this.style.display='none'; this.closest('.image-placeholder-wrapper').classList.remove('has-real-image');">
                   <div class="placeholder-content" id="stepper-placeholder-content">
@@ -3463,7 +3474,7 @@
         <div class="verein-features-grid">
           <div class="image-placeholder-wrapper ratio-4-3 reveal-on-scroll">
             <img src="unterricht-im-freien.jpg" alt="Schulklasse beim Unterricht im Freien am Meiler"
-              loading="lazy" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
+              loading="eager" onload="this.closest('.image-placeholder-wrapper').classList.add('has-real-image');"
               onerror="this.style.display='none';">
             <div class="placeholder-content">
               <svg class="placeholder-icon" viewBox="0 0 24 24">
